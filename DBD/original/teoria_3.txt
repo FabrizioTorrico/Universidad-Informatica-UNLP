@@ -1,0 +1,160 @@
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+
+Analizar el problema 
+Proponer un diagrama con  Entidades y Relaciones
+Un taller mecánico desea registrar los servicios de mantenimiento que realiza a los vehículos de sus  clientes, que pueden ser personas físicas o jurídicas. De los clientes se conoce su CUIT o CUIL, razón social o  Nombre y Apellido dependiendo si es jurídica o física la persona además del domicilio. Un cliente puede  poseer varios vehículos. 
+De cada vehículo se conoce su patente, marca, modelo, a que cliente pertenece y el motor que posee.  Del motor se conoce su número, cilindrada y marca. Un motor puede estar instalado en un único vehículo. En el taller trabajan empleados, de los cuales se conoce su CUIL, Nombre y Apellido, fecha de  nacimiento, fecha de ingreso al taller. En el caso de los administrativos se conoce el turno en el que  trabajan, pudiendo ser de mañana entre las 8 y las 14 hs. o por la tarde entre las 12 y las 18 hs. El taller ofrece diversos servicios de mantenimiento de los cuales se conoce un km en el cual debería  realizarse y un nombre. Estos servicios están compuestos de varias tareas, de las cuales se conoce una  descripción y el tiempo aproximado de realización. Una misma tarea puede ser parte de distintos  mantenimientos. Para cada tarea de un mantenimiento se conoce su valor actual, que para la misma tarea  puede variar en los distintos mantenimientos. 
+De cada servicio que se le realiza a un vehículo al taller le interesa registrar el motivo por el cual  ingresa, las fechas de ingreso y de egreso, el monto total abonado, que empleado realizó cada una de las  tareas de mantenimiento realizado y en que kilometraje del vehículo se realizó. Un servicio podría incluir  tareas de varios mantenimientos.
+
+
+• Un posible modelo conceptual de ER para el ejercicio sería:
+
+```
+erDiagram
+    %% ENTIDADES PRINCIPALES %%
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+    CLIENTE {
+        int id_cliente PK
+        string domicilio
+        string tipo_cliente "Fisica o Juridica"
+    }
+
+    FISICA {
+        int id_cliente FK
+        string cuil
+        string nombre_apellido
+    }
+
+    JURIDICA {
+        int id_cliente FK
+        string cuit
+        string razon_social
+    }
+
+    VEHICULO {
+        string patente PK
+        string marca
+        string modelo
+        int id_cliente FK
+    }
+
+    MOTOR {
+        string numero_motor PK
+        int cilindrada
+        string marca
+        string patente_vehiculo FK "1 a 1 con Vehiculo"
+    }
+
+    SERVICIO {
+        int id_servicio PK
+        float monto
+        date fecha_ingreso
+        date fecha_egreso
+        string motivo
+        int km_actual "Dato movido de la relacion REALIZA"
+        string patente_vehiculo FK
+    }
+
+    DETALLE {
+        int id_detalle PK
+        int id_servicio FK
+        int id_empleado FK
+        int id_mantenimiento FK
+        float precio
+        string descripcion
+    }
+
+    EMPLEADO {
+        string cuil PK
+        string nombre_apellido
+        date fecha_nacimiento
+        date fecha_ingreso
+    }
+
+    ADMINISTRATIVO {
+        string cuil FK
+        string turno
+    }
+
+    %% GESTION DE MANTENIMIENTOS Y TAREAS %%
+
+    MANTENIMIENTO {
+        int id_mantenimiento PK
+        int km_sugerido
+        string nombre
+    }
+
+    TAREA {
+        int id_tarea PK
+        string descripcion
+        string tiempo_estimado
+    }
+
+    %% ENTIDAD ASOCIATIVA PARA "COMPUESTO POR" (M:N con atributo) %%
+    MANTENIMIENTO_TAREA {
+        int id_mantenimiento FK
+        int id_tarea FK
+        float valor_actual "Atributo de la relacion"
+    }
+
+    %% RELACIONES %%
+
+    CLIENTE ||--|| FISICA : "Es (Herencia)"
+    CLIENTE ||--|| JURIDICA : "Es (Herencia)"
+    
+    CLIENTE ||--o{ VEHICULO : "ES DUEÑO"
+    
+    VEHICULO ||--|| MOTOR : "TIENE (1:1)"
+    
+    VEHICULO ||--o{ SERVICIO : "REALIZA"
+    
+    SERVICIO ||--|{ DETALLE : "POSEE"
+    
+    EMPLEADO ||--o{ DETALLE : "REALIZADO POR"
+    EMPLEADO ||--|| ADMINISTRATIVO : "Es (Herencia)"
+
+    %% Relacion un poco ambigua en la imagen original, pero modelada segun lineas %%
+    %% El detalle contiene items de un mantenimiento %%
+    MANTENIMIENTO ||--o{ DETALLE : "CONTIENE / REFERENCIA"
+
+    %% Relacion Muchos a Muchos resuelta %%
+    MANTENIMIENTO ||--|{ MANTENIMIENTO_TAREA : "DEFINIDO EN"
+    TAREA ||--|{ MANTENIMIENTO_TAREA : "PARTE DE"
+
+```
+Realizar la transformación 1 a  1 del Modelo de Entidades y  Relaciones, al Modelo 
+Relacional
+
+Transformación: 
+• Cliente (#cliente, domicilio, tipo_cliente, CUIT, razón_social, CUIL, nombre_apellido)  – Para la generalización CLIENTE elijo la estrategía de dejar solo al padre agregando un atributo discriminador. • Vehículo (patente, marca, modelo) 
+• Motor (#motor, cilindrada, marca) 
+• Empleado (CUIL, nombre_apellido, fecha_nacimiento, fecha_ingreso) 
+• Administrativo (CUIL, turno) elijo la estrategía de dejar padre e hija (raíz/hoja) • Servicio (#servicio, monto, fecha_ingreso, fecha_egreso, motivo, monto) • Detalle (#detalle, precio, descripcion) 
+• Mantenimiento (#mantenimiento, km, nombre) 
+• Tarea (#tarea, descripcion, tiempo) 
+• es_dueño (#cliente,#vehiculo) 
+• tiene (#vehiculo, #motor) 
+• realiza (#vehiculo, #servicio, km_actual) 
+• posee (#servicio, #detalle) 
+• realizado_por (#detalle, CUIL) 
+• compuesto_por (#mantenimiento,#tarea,valor) 
+• contiene (#mantenimiento,#tarea,#detalle)
+Qué sucede en el  ejercicio si …
+Bonus ejercicio 
+• Para cada empleado del taller  se desea conocer quién es su supervisor. Un empleado puede supervisar a muchos empleados. 
+• Se desea mantener el historial del valor de cada tarea del  mantenimiento, registrando la  fecha de inicio y fin de ese  valor. 
+•Un vehículo puede pertenecer a más de un cliente, pero uno  solo es el responsable del  mismo al momento de un  servicio.
+
+• Un posible modelo conceptual de ER para el ejercicio sería:
+
+
+
+
+• Un posible modelo conceptual de ER para el bonus, sería:
+

@@ -1,0 +1,571 @@
+Bases de  
+Datos 1
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto
+
+TEMAS GENERALES
+B ases de Datos 1
+1 2 3 4 5
+
+Modelo de Datos
+Teoría de Diseño de Bases de Datos  
+Álgebra Relacional
+DBMS  
+Relacional MySQL
+Visualización de Datos
+
+TEMAS Y SUBTEMAS
+Modelo de Datos
+Teoría de Diseño de Bases de Datos
+Álgebra Relacional
+DBMS Relacional
+MySQL
+V isualización de Datos
+
+C onceptos Generales C onceptos Generales
+Deuda técnica Operaciones C onceptos de DBMS C onceptos generales
+Modelo de Entidades y  
+Relaciones Proceso de Normalización Intro a SQL y optimización Datos abiertos Modelo Relacional Visualización
+
+Docentes de la Práctica
+J efes de Trabajos Prácticos
+Natalia C orrea
+Federico Di  
+C laudio
+Ayudantes
+Andrea  
+Martínez
+Tomás  
+C apelli
+Luciana  
+Tanevitch
+Iván  
+Scopel
+Natalia  
+Ortú
+
+Horarios Consulta Práctica
+Martes 8:00 a 10:00 - Aula 9 Martes 19:00 a 21:00 - Sala de PC
+Jueves 19:00 a 21:00 - Aula 10A Viernes 8:00 a 10:00 - Aula 3
+
+Inicio de  
+Consulta  
+Práctica Semana de 19 de agosto
+Trabajos Prácticos
+Modelo de Datos
+Teoría de Diseño de Bases de Datos
+Álgebra Relacional
+DBMS Relacional
+MySQL
+V isualización de Datos
+
+19/08 0 9 /0 9 3 0 /0 9 0 9 /1 0 2 3 /1 0
+ParcialParcial
+13/11, 8hs. Aula 11.
+Primer Recuperatorio
+27/11, 8hs. Aula 11.
+Segundo Recuperatorio
+11/12, 8hs. Aula 11.
+TEMAS GENERALES
+B ases de Datos 1
+1 2 3 4 5
+
+Modelo de Datos
+Teoría de Diseño de Bases de Datos  
+Álgebra Relacional
+DBMS  
+Relacional MySQL
+Visualización de Datos
+
+Modelo
+de DatosProvee una notación para describir los datos
+Se define a partir de
+• Estructura de los datos
+• Restricciones sobre los datos
+• Operaciones con los datos
+(optativo)
+Constituye la estructura subyacente  
+de una base de datos
+
+Modelos Lógicos
+Modelos Físicos
+Elmasri, R., & Navathe, S. B. (1989). Fundamentals of Database Systems. The Benj amin/Cummings Publishing Company, Inc.
+Tipos
+de  
+Modelos de  
+Datos
+Modelos Lógicos
+Modelos Lógicos Basados en Objetos
+Modelos Lógicos Basados en Registros
+Tipos
+de  
+Modelos de  
+Datos
+Modelos Lógicos
+Modelos Lógicos Basados en Objetos
+Modelo de Entidades y Relaciones Modelo Basado en Objetos
+Modelos Lógicos Basados en Registros
+Modelo Relacional
+Tipos
+de  
+Modelos de  
+Datos
+
+Modelo basado  
+en Objetos
+Modelo de  
+datos
+Modelo de  
+datos
+Basados en  
+Objetos
+Modelo  
+Entidad  
+Relación
+Modelo de datos
+Basados  
+Registros
+Modelo  
+Relacional
+
+Modelo de Entidades y Relaciones
+
+Modelo basado  
+en Objetos
+Modelo de  
+datos
+Modelo de  
+datos
+Basados en  
+Objetos
+Modelo  
+Entidad  
+Relación
+Modelo de datos
+Basados  
+Registros
+Modelo  
+Relacional
+
+Modelo
+de  
+Entidades y  
+Relaciones
+Se define a partir de:• Estructura
+• Entidad
+• Relación  
+• Atributos
+• Restricciones
+• Cardinalidad
+• Identificador
+• Grado
+• Acerca de los nombres
+
+Modelo de Entidades y Relaciones
+Entidad
+Es una “cosa o concepto” que puede ser identificada y distinguible de otra “cosa o concepto”
+Ejemplos:
+Juan con dni 1234567
+un auto modelo 2015 patente PRI
+Modelo de Entidades y Relaciones
+Entidad
+Es una “cosa o concepto” que puede ser identificada y distinguible de otra “cosa o concepto”
+Ejemplos:
+Juan con dni 1234567
+un auto modelo 2015 patente PRI
+Relación
+Es una asociación de entidades
+Ejemplos:
+Juan con dni 1234567 es_dueño_de un auto modelo 2015 cuya patente es PRI
+Modelo de Entidades y Relaciones
+Atributo
+Representa información acerca de una entidad o una relación Ejemplos: nombre, dni, modelo, patente
+Modelo de Entidades y Relaciones
+Atributo
+Representa información acerca de una entidad o una relación Ejemplos: nombre, dni, modelo, patente  
+Dominio de un atributo:
+Conjunto de valores que puede tomar un atributo en particular Ejemplo: nombre puede ser una cadena de máximo 50 letras del abecedario
+Modelo de Entidades y Relaciones• Entidad
+–Juan con dni 1234567
+–Un auto modelo 2015 patente PRI
+• Conjunto de entidades
+• Es un conjunto de entidades del mismo tipo
+•Ejemplos:
+•El conjunto de todas las personas que poseen un nombre y tienen un dni puede llamarse PERSONA
+•El conjunto de todos los autos que poseen información del modelo y de la patente puede llamarse AUTO
+Modelo de Entidades y Relaciones• Relación
+•Juan con dni 1234567 es_dueño_de un auto modelo  
+2015 cuya patente es PRI  
+• Conjunto de relaciones
+• Es un conjunto de relaciones del mismo tipo
+•Ejemplo:
+•ES_DUEÑO_DE es un conjunto de relaciones entre las entidades PERSONA Y AUTO  
+Modelo de Entidades y Relaciones
+Los términos entidad y conjunto de  
+entidades serán intercambiables,  
+haciendo abuso del vocabulario
+Importante!
+Los términos relación y conjunto de  
+relaciones serán intercambiables,  
+haciendo abuso del vocabulario
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+• Determina el número de veces en el que puede participar una entidad en una relación
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+• Determina el número de veces en el que puede participar una entidad en una relación
+• Indica dependencia (importancia de la cardinalidad mínima)
+total o de existencia: participación obligatoria (al menos uno) parcial: participación no obligatoria (puede ser cero)
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+Tomamos un conjunto binario de relaciones R entre dos conjuntos de entidades A y B, la cardinalidad (considerando los extremos máximos de cada lado de R) puede ser:  
+Uno a uno
+Uno a muchos
+Muchos a muchos
+Modelo de Entidades y Relaciones
+
+Restricciones: Cardinalidad Uno a uno
+Restricción de cardinalidad Uno a Uno
+
+Una entidad de A puede estar asociada con a lo sumo una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+Uno a uno
+Una entidad de A puede estar asociada con a lo sumo una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+A B
+Una entidad de A puede estar  
+asociada con a lo sumo una
+entidad de B y una entidad  
+de B puede estar asociada  
+con a lo sumo una entidad  
+de A
+(0, 1) (0, 1)
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+Uno a uno
+Una entidad de A puede estar asociada con a lo sumo una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+A B
+Una entidad de A puede estar asociada con a lo sumo una entidad de B y una entidad de B está asociada con una entidad de A
+(1, 1) (0, 1)
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+Uno a uno
+Una entidad de A puede estar asociada con a lo sumo una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+A B
+Una entidad de A está asociada con una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+(0, 1) (1, 1)
+Modelo de Entidades y Relaciones Restricciones: Cardinalidad
+Uno a uno
+Una entidad de A puede estar asociada con a lo sumo una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+A B
+Una entidad de A está asociada con una entidad de B y una entidad de B está asociada con una entidad de A
+(1, 1) (1, 1)
+Modelo de Entidades y Relaciones
+
+• Restricciones: Cardinalidad –Uno a muchos
+Restricción de cardinalidad Uno a Muchos
+
+•Una entidad de A está asociada con cualquier número de entidades en B, pero una entidad de B está asociada con a lo sumo una entidad de A
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Uno a muchos
+A B
+
+(0, 1) (0, n)
+Una entidad de A puede estar asociada con muchas entidades de B y una entidad de B está asociada con a lo sumo una entidad de A
+
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Uno a muchos
+A B
+Una entidad de A puede
+
+(1, 1) (0, n)
+estar asociada con muchas entidades de B y una entidad de B está asociada con una entidad de A
+
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Uno a muchos
+A B
+Una entidad de A puede
+
+(1, 1) (1, n)
+estar asociada con al menos una entidad de B y una entidad de B está asociada con una entidad de A
+
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Uno a muchos
+A B
+Una entidad de A está
+
+(0, 1) (1, n)
+asociada con al menos una entidad de B y una entidad de B puede estar asociada con a lo sumo una entidad de A
+
+Modelo de Entidades y Relaciones
+
+• Restricciones: Cardinalidad –Muchos a muchos
+Restricción de cardinalidad Muchos a Muchos
+
+•Una entidad de A está asociada con cualquier número de entidades en B y una entidad de B está asociada con cualquier número de entidades en A
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Muchos a muchos
+A B
+Una entidad de A puede
+
+(0, n) (0, n)
+estar asociada con muchas entidades de B y una entidad de B puede estar asociada con muchas entidades de A
+
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Muchos a muchos
+A B
+Una entidad de A está
+
+(0, n) (1, n)
+asociada con al menos una entidad de B y una entidad de B puede estar asociada con muchas entidades de A
+
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Muchos a muchos
+A B
+Una entidad de A puede
+
+(1, n) (0, n)
+estar asociada con muchas entidades de B y una entidad de B está asociada con al menos una entidad de A
+
+Modelo de Entidades y Relaciones
+• Restricciones: Cardinalidad
+–Muchos a muchos
+A B
+(1, n) (1, n)Una entidad de A esta  
+asociada con al menos una  
+entidad de B y una entidad  
+de B está asociada con al  
+menos una entidad de A
+Modelo de Entidades y Relaciones
+
+• Restricciones: Grado
+Restricción de Grado
+
+–Representa el número máximo de veces que una entidad puede estar relacionada con otra.
+Ejemplos:
+
+(1, n)
+Grado n
+(1, 1)
+Grado 1
+
+Modelo de Entidades y Relaciones
+
+• Restricciones: Clave o identificador
+•Restricción de unicidad del valor del atributo
+Restricción Clave o Identificador
+
+Modelo de Entidades y Relaciones
+
+• Restricciones: Clave o identificador
+•Restricción de unicidad del valor del atributo
+Restricción Clave o Identificador
+
+•Sirven para identificar de manera única a una entidad
+Modelo de Entidades y Relaciones
+
+• Restricciones: Clave o identificador
+•Restricción de unicidad del valor del atributo
+Restricción Clave o Identificador
+
+•Sirven para identificar de manera única a una entidad •Toda entidad posee al menos una posible clave o identificador
+Modelo de Entidades y Relaciones
+
+• Restricciones: Clave o identificador
+•Restricción de unicidad del valor del atributo
+Restricción Clave o Identificador
+
+•Sirven para identificar de manera única a una entidad •Toda entidad posee al menos una posible clave o identificador •Puede ser:
+–Simple
+–Compuesto
+Modelo de Entidades y Relaciones
+
+• Restricciones: Nombres
+Restricción acerca de los nombres
+
+•No se pueden repetir los nombres de los atributos en una misma entidad ni en una misma relación
+Modelo de Entidades y Relaciones
+
+• Restricciones: Nombres
+Restricción acerca de los nombres
+
+•No se pueden repetir los nombres de los atributos en una misma entidad ni en una misma relación
+•No se pueden repetir nombres ni para entidades, ni para relacionales, ni para ninguna de ellas
+Modelo de Entidades y Relaciones Notación gráfica
+Modelo de Entidades y Relaciones• Diagrama de entidades y relaciones
+–Representación gráfica de la estructura de los datos • Entidad
+• Relación
+• Atributo
+• Cardinalidad
+Modelo de Entidades y Relaciones• Diagrama de entidades y relaciones
+–Notación de atributos descriptores e identificadores simples y compuestos en una entidad
+
+–Notación de un atributo en una relación
+Modelo de Entidades y Relaciones• Ejemplo de un diagrama de Entidades y Relaciones
+
+¿Cómo se lee la restricción de cardinalidad?
+Una persona tiene al menos un auto y a lo sumo n
+Y un auto es poseído por una única persona
+Modelo de Entidades y Relaciones Rol de una entidad e n una relación
+Concepto y notación gráfica
+Modelo de Entidades y Relaciones• Rol de una entidad en una relación
+–Indica la función que tiene la entidad en la relación
+Modelo de Entidades y Relaciones• Rol de una entidad en una relación
+–Indica la función que tiene la entidad en la relación
+•Ejemplo:
+–tutor_de
+»Juan con dni 123456 es tutor_de Maria cuyo dni es 234567. Esta última, tiene el rol de tutelada_por
+Modelo de Entidades y Relaciones• Ejemplo de un diagrama de Entidades y Relaciones –Rol-
+
+¿Cómo se lee la restricción de cardinalidad?
+Una persona es superior de cero o muchas otras personas
+Una persona trabaja para a lo sumo una persona
+Modelo de Entidades y Relaciones
+En algunos ejemplos de los slides de  
+teoría se omite poner atributos en las  
+entidades.
+Importante!
+Al momento de realizar los ejercicios  
+propuestos en la materia, tener en  
+cuenta que toda entidad debe al menos  
+tener un atributo
+Modelo de Entidades y Relaciones
+Asignación de  
+cardinalidades
+Entidad_A Relacion_A Entidad_B (0,1) (0,1)
+
+Entidad_A Relacion_A Entidad_B (0,1) (1,1) Entidad_A Relacion_A Entidad_B (1,1) (1,1)
+Entidad_A Relacion_A Entidad_B (0,1) (1,n) Entidad_A Relacion_A Entidad_B (0,n) (1,n)
+Entidad_A Relacion_A Entidad_B (1,n) (1,n)
+
+Entidad_A Relacion_A Entidad_B (0,1) (0,n)
+Modelo de Entidades y Relaciones AMPLIADOS
+Especialización
+Generalización
+Modelo de Entidades y RelacionesESPECIALIZACIÓN
+• Es el resultado de tomar un subconjunto de  
+entidades de un nivel para formar un conjunto de entidades de nivel más bajo
+nombre
+
+–Ejemplo:
+• Tenemos empleados de un hospital. De los médicos nos  
+apellido
+fecha_nacimiento nroLegajo
+Empleado
+
+interesa su matrícula. Puede haber empleados que no son  
+(E)
+médicos
+Médico
+matricula
+Modelo de Entidades y RelacionesGENERALIZACION
+• Es el resultado de tomar uno o más conjuntos de entidades (de nivel más bajo) y producir un conjunto de entidades de un nivel más alto
+–Ejemplo:
+
+• Distintos tipos de cuenta: cajas de ahorro y cuentas corrientes, pero ambas son consideradas cuentas
+Cuenta (G)
+
+Cuenta Corriente Caja de Ahorro
+Modelo de Entidades y RelacionesMecanismos de abstracción
+Generalización Especialización
+Cuenta Cuenta
+(G) (E)
+Cuenta Corriente Caja de Ahorro Cuenta Corriente Caja de Ahorro
+
+No hay otro tipo de cuentas
+Podría haber otra caja de ahorro especial
+
+Modelo de Entidades y Relaciones AMPLIADOS
+AGREGACIÓN
+Modelo de Entidades y Relaciones
+–Supongamos que se guardan entrevistas de solicitantes de empleo a varias compañías
+Compañia (1,n) entrevista (0,n) Solicitante_Empleo
+–Supongamos, además que algunas entrevistas resultan en ofertas de empleo, pero otras no.
+Modelo de Entidades y Relaciones • Un problema del modelo de entidades y relaciones es que:
+No es posible expresar  
+relaciones entre  
+relaciones existentes
+Modelo de Entidades y Relaciones
+• AGREGACIÓN
+Es un mecanismo de abstracción en el cual una relación binaria (junto a las dos entidades relacionadas) se trata como entidad de alto nivel
+Nota: la cardinalidad máxima para cada entidad de la relación siempre es mayor a 1.
+Modelo de Entidades y Relaciones• Supongamos que se guardan entrevistas de solicitantes de empleo a varias compañías Compañia (1,n) entrevista (0,n) Solicitante_Empleo
+• Supongamos, además que algunas entrevistas resultan en ofertas de empleo, pero otras no
+
+Modelo de Entidades y Relaciones
+
+Modelo de Entidades y Relaciones
+• Ejemplo
+–Un profesor puede dictar uno o varios cursos. Una vez asignado un profesor a un curso es posible que se registren asistentes a dicha asignación
+(1,n) (1,n)
+CURSO PROFESOR dicta
+(0,n)
+asiste
+(0,n)
+ASISTENTE
+Modelo Basado e n Registros
+
+Modelo basado  
+en Objetos
+Modelo de  
+datos
+Modelo de  
+datos
+Basados en  
+Objetos
+Modelo  
+Entidad  
+Relación
+Modelo de datos
+Basados  
+Registros
+Modelo  
+Relacional
+
+Modelo
+Relacional
+Se define a partir de:• Estructura
+• Relación
+• Atributo
+• Esquema
+• Tupla
+• Restricciones
+• Clave
+• Dominio de un atributo • Acerca de los nombres
+
+Modelo Relacional
+• Representa los datos como tablas bidimensionales llamadas relaciones
+• Ejemplo: Persona
+Modelo Relacional
+• Representa los datos como tablas bidimensionales llamadas relaciones
+• Ejemplo: Persona
+• Atributos
+–El nombre de cada columna indica un atributo de la relación o tabla.
+• Ejemplos: dni, edad, nombre
+Modelo Relacional
+• Esquema
+–Está formado por el nombre de una relación y su conjunto de atributos
+•Ejemplo: Persona(dni, edad, nombre)
+Nota: los atributos de un esquema son un conjunto y no una lista, por lo tanto, no hay un orden físico.
+Modelo Relacional
+• Tuplas
+–Son las filas de una relación (excepto sus encabezados) –Posee un solo componente para cada atributo de la relación • Ejemplo (123456, 54, Juan) es una tupla con tres componentes de la relación Persona
+Modelo Relacional
+Restricciones:
+–Dominio
+•Cada componente de cada tupla debe ser atómica, es decir, debe ser un tipo elemental (no puede ser una lista, un registro, etc)
+Modelo Relacional
+Restricciones:
+–Dominio
+•Cada componente de cada tupla debe ser atómica, es decir, debe ser un tipo elemental (no puede ser una lista, un registro, etc) –Clave de una relación
+•Un conjunto de atributos conforma una clave en la relación cuando a dicho conjunto no se le permite tomar dos valores iguales en todos los atributos de la clave
+–Ejemplo: Persona(dni, edad, nombre)
+Modelo Relacional
+Restricciones:
+–Dominio
+•Cada componente de cada tupla debe ser atómica, es decir, debe ser un tipo elemental (no puede ser una lista, un registro, etc) –Clave de una relación
+•Un conjunto de atributos conforma una clave en la relación cuando a dicho conjunto no se le permite tomar dos valores iguales en todos los atributos de la clave
+–Ejemplo: Persona(dni, edad, nombre)
+–Unicidad en nombres de esquemas, relaciones y atributos dentro de un esquema

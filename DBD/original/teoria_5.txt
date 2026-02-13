@@ -1,0 +1,861 @@
+Bases  de  
+Datos 1 
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+TEMAS GENERALES 
+B ases de Datos 1 
+1 2 3 4 5 
+
+Modelo de  Datos 
+Teoría de  Diseño de  Bases de  Datos  
+Álgebra  Relacional 
+DBMS  
+Relacional MySQL 
+Visualización  de Datos 
+
+TEMAS Y SUBTEMAS 
+Vimos la clase pasada
+Teoría de Diseño de Bases de Datos Relacionales C onceptos Generales: 
+▪C lave de una relación 
+▪C lave candidata 
+▪Superclave 
+▪Axiomas de Armstrong 
+▪C lausura de un conjunto de atributos 
+Normalización: 
+▪Descomposición 
+▪Pérdida de Información 
+▪Pérdida de Dependencias Funcionales ▪Formas Normales 
+▪Boyce y Codd (BCNF) 
+TEMAS Y SUBTEMAS 
+Hoy veremos…
+Teoría de Diseño de Bases de Datos  Relacionales 
+Proceso de Normalización a BCNF Algoritmo para analizar pérdida de dfs 3ra Forma Normal 
+Proceso de Normalización a 3FN 1ra. Forma Normal 
+2da. Forma Normal 
+Dependencias Multivaluadas 
+4ta Forma Normal 
+Proceso de Normalización a 4FN Síntesis del proceso de normalización 
+
+Un esquema de relación está en BCNF sí,  siempre que una dependencia funcional  de la forma X->A es válida en R,  entonces se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial
+Forma  Normal D e 
+Boyce  y 
+Codd 
+(FNBC) (BCNF) 
+Particionar llevando un esquema a BCFN,  asegura que: 
+las anomalías dejan de estar (sólo  puede quedar redundancia),  
+que no se pierda información y,  
+en algunos casos, asegura que no se  pierdan dependencias funcionales 
+En general, al  llevar un esquema a BCNF
+
+Para normalizar un esquema (en principio) y  propiciar un buen diseño, vamos a valernos de: 
+• las dependencias funcionales del esquema • las claves candidatas 
+• la definición de BCNF 
+• la descomposición o particionamiento del  esquema
+Iniciemos con el proceso de normalización de un  esquema a partir de un ejemplo 
+C onsiderando que el esquema ya se encuentra en Primera Forma Normal
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionales 
+FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado,  mesa_invitado, servicio_contratado, dni_invitado) 
+Donde: 
+- Hay diversos salones, pero de cada salón se conoce la dirección y la capacidad  máxima 
+- Una fiesta se brinda en un salón y en una fecha determinada. Notar que en un  mismo salón se realizan diferentes fiestas en diferentes fechas 
+- Para cada fiesta se conocen todos los servicios contratados 
+- Para cada fiesta se saben quiénes son los invitados y donde se debe sentar  cada uno de ellos 
+Hallar la o las claves candidatas y las dependencias funcionales
+…trabajando…
+Teoría de Diseño de BBDD RelacionalesFIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado, mesa_invitado,  servicio_contratado, dni_invitado) 
+Donde: 
+- Hay diversos salones, pero de cada salón se conoce la dirección y la capacidad máxima - Una fiesta se brinda en un salón y en una fecha determinada. Notar que en un mismo salón se  realizan diferentes fiestas en diferentes fechas 
+- Para cada fiesta se conocen todos los servicios contratados 
+- Para cada fiesta se saben quiénes son los invitados y donde se debe sentar cada uno de ellos 
+Clave candidata 
+(#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+Dependencias Funcionales 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 
+3. dni_invitado-> nombre_invitado 
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionales
+FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado, mesa_invitado,  
+servicio_contratado, dni_invitado) 
+Clave candidata 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+Dependencias Funcionales 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 
+3. dni_invitado-> nombre_invitado 
+BCNF 
+Para toda dependencia funcional se  
+
+FIESTAS cumple con la definición de BCNF? 
+cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional  trivial 
+
+Teoría de Diseño de BBDD Relacionales
+• FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado,  
+mesa_invitado, servicio_contratado, dni_invitado) 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+Por ejemplo, analizo la dependencia funcional 1: 
+1. #salon 🡪 dirección, capacidad 
+BCNF 
+Para toda dependencia funcional se  
+cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional  
+trivial 
+{#salon} no es superclave del esquema FIESTAS 
+FIESTAS no cumple la definición de BCNF 
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionales• FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado, mesa_invitado,  
+
+servicio_contratado, dni_invitado) 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+1. #salon 🡪 dirección, capacidad 
+Dado que FIESTAS NO CUMPLE CON LA DEFINICION DE BCNF,  
+Un esquema R donde vale una  dependencia funcional X->Y se  descompone como  
+R1(X, Y) 
+R2(R-Y) 
+
+descompongo/particiono FIESTAS considerando la dependencia funcional 1. F1(#salon, dirección, capacidad) 
+F2 = Fiestas – {dirección, capacidad} 
+Es decir, F2 tiene los siguientes atributos: 
+F2 ( #salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  dni_invitado) 
+Teoría de Diseño de BBDD Relacionales
+• FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado,  
+mesa_invitado, servicio_contratado, dni_invitado) 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+1. #salon 🡪 dirección, capacidad 
+Dado que FIESTAS NO CUMPLE CON LA DEFINICION DE BCNF, descompongo/particiono FIESTAS  considerando la df1. 
+F1(#salon, dirección, capacidad) 
+F2 ( #salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado, dni_invitado) 
+Con el particionamiento propuesto: 
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionales
+• FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado,  
+mesa_invitado, servicio_contratado, dni_invitado) 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+1. #salon 🡪 dirección, capacidad 
+Dado que FIESTAS NO CUMPLE CON LA DEFINICION DE BCNF, descompongo/particiono FIESTAS  considerando la df1. 
+F1(#salon, dirección, capacidad) 
+F2 ( #salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado, dni_invitado) 
+
+R1 ∩ R2 clave en el esquema R1  o 
+R1 ∩ R2 clave en el esquema R2 
+Con el particionamiento propuesto: ¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+
+Teoría de Diseño de BBDD Relacionales
+Clave candidata: (#salon, fecha_fiesta, dni_invitado, nom_contratante,  
+servicio_contratado ) 
+F1(#salon, direccion, capacidad) 
+F2(#salon, fecha_fiesta, nom_contratante, cant_invitados, nombre_invitado,  
+cant_mesas, mesa_invitado, servicio_contratado, dir_contratante, dni_invitado) 
+Con el particionamiento propuesto: 
+¿Se perdió información?  
+F1 ∩ F2 es clave en el esquema {#salon} 
+Entonces, no se perdió información. 
+Teoría de Diseño de BBDD Relacionales
+• FIESTAS ( #salon, dirección, capacidad, fecha_fiesta, nombre_invitado,  
+mesa_invitado, servicio_contratado, dni_invitado) 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+1. #salon 🡪 dirección, capacidad 
+Dado que FIESTAS NO CUMPLE CON LA DEFINICION DE BCNF, descompongo/particiono FIESTAS  considerando la df1. 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado, dni_invitado) 
+
+Verificar que cada una de las  
+dependencias funcionales que valían en  el esquema R, sigan valiendo en alguna  de las particiones Ri.  
+Con el particionamiento propuesto: ¿Se perdió información? NO 
+
+¿Se perdieron dependencias funcionales? 
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  dni_invitado) 
+¿Se perdieron dependencias funcionales? 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 
+3. dni_invitado-> nombre_invitado 
+Fue posible validarlo de la  
+
+En F1, vale df1 
+En F2 valen las dfs 2 y 3 
+manera simple, sin necesitar  de un algoritmo particular
+
+Entonces, no se perdieron dependencias funcionales. 
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionalescc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  dni_invitado) 
+¿F1 y F2 cumplen con la definición de BCNF? 
+BCNF 
+Para toda dependencia funcional se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial 
+
+En F1 vale sólo la df1, en F1 se cumple que {#salon} es superclave, entonces F1 cumple la definición de BCNF 
+En F2 vale valen las df2 y df3. En particular, {dni_invitado} no es superclave en F2.  Entonces, F2 no cumple con la definición de BCNF, descompongo/particiono F2, considerando la  dependencia funcional 3  
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 
+3. dni_invitado-> nombre_invitado 
+En este caso, debo seguir part icionando, ahora con foco en F2
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  
+dni_invitado) 
+En F2 vale valen las df2 y df3. En particular, {dni_invitado} no es superclave en F2.  
+Entonces, F2 no cumple con la definición de BCNF, descompongo/particiono F2, considerando la  dependencia funcional 3  
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+Con el particionamiento propuesto: 
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  
+dni_invitado) 
+En F2 vale valen las df2 y df3. En particular, {dni_invitado} no es superclave en F2.  
+Entonces, F2 no cumple con la definición de BCNF, descompongo/particiono F2, considerando la  dependencia funcional 3  
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+
+R1 ∩ R2 clave en el esquema R1  o 
+R1 ∩ R2 clave en el esquema R2 
+Con el particionamiento propuesto: 
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  
+dni_invitado) 
+En F2 vale valen las df2 y df3. En particular, {dni_invitado} no es superclave en F2.  
+Entonces, F2 no cumple con la definición de BCNF, descompongo/particiono F2, considerando la  dependencia funcional 3  
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+¿Con el particionamiento propuesto se perdió información? 
+F3 ∩ F4 es clave en el esquema {dni_invitado} 
+Entonces, no se perdió información. 
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  
+dni_invitado) 
+En F2 vale valen las df2 y df3. En particular, {dni_invitado} no es superclave en F2.  
+Entonces, F2 no cumple con la definición de BCNF, descompongo/particiono F2, considerando la  dependencia funcional 3  
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+Con el particionamiento propuesto: 
+
+Verificar que cada una de las  
+dependencias funcionales que valían en  el esquema R, sigan valiendo en alguna  de las particiones Ri.  
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F1(#salon, dirección, capacidad) 
+F2(#salon, fecha_fiesta, nombre_invitado, mesa_invitado, servicio_contratado,  
+dni_invitado) 
+En F2 vale valen las df2 y df3. En particular, {dni_invitado} no es superclave en F2.  
+Entonces, F2 no cumple con la definición de BCNF, descompongo/particiono F2, considerando la  dependencia funcional 3  
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+¿Con el particionamiento propuesto se perdieron dependencias funcionales? 
+En F3 vale la dependencia funcional 3. {dni_invitado} es superclave en F3. Entonces, F3 cumple con  la definición de BCNF. 
+En F4 vale la dependencia funcional 2. {#salon, fecha_fiesta, dni_invitado } NO es superclave en  F4. Entonces, F4 NO cumple con la definición de BCNF. 
+En este caso, debo seguir part icionando, ahora con foco en F4
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+Dado que F4 NO cumple con la definición de BCNF, los particiono considerando la dependencia  funcional 2 
+F5 (#salon, fecha_fiesta, dni_invitado, mesa_invitado) 
+F6(#salon, fecha_fiesta, servicio_contratado, dni_invitado) 
+
+R1 ∩ R2 clave en el esquema R1  o 
+R1 ∩ R2 clave en el esquema R2 
+Con el particionamiento propuesto: 
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+Dado que F4 NO cumple con la definición de BCNF, los particiono considerando la dependencia  funcional 2 
+F5 (#salon, fecha_fiesta, dni_invitado, mesa_invitado) 
+F6(#salon, fecha_fiesta, servicio_contratado, dni_invitado) 
+¿Con el particionamiento propuesto se perdió información? 
+F5 ∩ F6 es clave en el esquema {#salon, fecha_fiesta, dni_invitado} 
+Entonces, no se perdió información. 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+Dado que F4 NO cumple con la definición de BCNF, los particiono considerando la dependencia  funcional 2 
+F5 (#salon, fecha_fiesta, dni_invitado, mesa_invitado) 
+F6(#salon, fecha_fiesta, servicio_contratado, dni_invitado) 
+Con el particionamiento propuesto: 
+
+Verificar que cada una de las  
+dependencias funcionales que valían en  el esquema R, sigan valiendo en alguna  de las particiones Ri.  
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales? 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+
+Teoría de Diseño de BBDD Relacionales
+cc: (#salon, fecha_fiesta, dni_invitado, servicio_contratado ) 
+F3 (dni_invitado, nombre_invitado) 
+F4(#salon, fecha_fiesta, mesa_invitado, servicio_contratado, dni_invitado) 
+Dado que F4 NO cumple con la definición de BCNF, los particiono considerando la dependencia  funcional 2 
+F5 (#salon, fecha_fiesta, dni_invitado, mesa_invitado) 
+F6(#salon, fecha_fiesta, servicio_contratado, dni_invitado) 
+¿Con el particionamiento propuesto se perdieron dependencias funcionales? 
+En F5 vale la dependencia funcional 2. {#salon, fecha_fiesta, dni_invitado} es superclave en F5.  Entonces, F5 cumple con la definición de BCNF. 
+En F6 todos los atributos forman parte de la clave, Cualquier dependencia funcional que detectva a ser trivial. F6 cumple con la definición de BCNF. 
+BCNF 
+
+Para toda dependencia funcional se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial 
+1. #salon 🡪 dirección, capacidad 
+2. #salon, fecha_fiesta, dni_invitado 🡪 mesa_invitado 3. dni_invitado-> nombre_invitado 
+
+Teoría de Diseño de BBDD RelacionalesCómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionales
+Las particiones del FIESTAS, que quedaron en BCNF, son: 
+F1(#salon, direccion, capacidad) 
+F3(dni_invitado, nombre_invitado) 
+F5(#salon, fecha_fiesta,dni_invitado, mesa_invitado) 
+F6(#salon, fecha_fiesta,dni_invitado, servicio_contratado) 
+El esquema FIESTAS queda así normalizado hasta la Forma Normal de Boyce y Codd 
+Teoría de Diseño de BBDD Relacionales
+Las particiones del FIESTAS, que quedaron en BCNF, son: 
+F1(#salon, direccion, capacidad) 
+F3(dni_invitado, nombre_invitado) 
+F5(#salon, fecha_fiesta,dni_invitado, mesa_invitado) 
+F6(#salon, fecha_fiesta,dni_invitado, servicio_contratado) 
+El esquema FIESTAS queda así normalizado hasta la Forma Normal de Boyce y Codd 
+Teoría de Diseño de BBDD Relacionales 
+
+Cómo llevar un esquema R a BCNF (cuando se puede) 
+Hallar dependencias funcionales y claves candidatas 
+Proceso para  intentar llevar el  esquema a BCNF
+
+1) Analizar si en el esquema R existe alguna dependencia funcional que lleva al esquema a no cumplir con la definición de BCNF 
+1.1) SI existe tal dependencia funcional, particionar el esquema en dos nuevos esquemas Ri, Ri+1,  contemplando la dependencia funcional en cuestión.  
+Analizar las 2 particiones generadas preguntándose: 
+1.1.1) Se pierde información?  
+1.1.1.1: NO, entonces sigo a 1.1.2 
+1.1.1.2: SI. La partición es errónea. Re analizar 
+1.1.2) Se pierden Dependencias funcionales? 
+1.1.2.1 NO, entonces sigo a 1.1.3 
+1.1.2.2 Si. Veremos este caso en breve 
+1.1.3) Determinar en qué forma normal esta Ri, Ri+1, si no están en BCNF, reiniciar desde 1, sino pasar a 1.2 1.2) Si NO existe, el esquema está en BCNF 
+Teoría de Diseño de BBDD Relacionales
+• Hemos visto 
+–Como llevar un esquema a BCNF cuando no se pierde información ni dependencias  funcionales 
+–En particular, vimos el caso en el que los atributos de todas las dependencias  funcionales quedaron todos incluidos en alguna de las particiones generadas • Validación simple 
+• Resta ver: 
+–Qué sucede cuando los atributos de alguna dependencia funcional quedaron  distribuidos en más de una partición 
+• Validación formal mediante un algoritmo 
+–Qué hacer en el caso de que alguna dependencia funcional se pierda y no se  pueda avanzar con el proceso visto para llevar el esquema a BCNF 
+E jercicio Práctico
+
+Actividades 
+Determinar la o las claves  candidatas 
+Hallar las dependencias funcionales 
+Iniciar el proceso de  normalización para llevar el esquema a BCNF
+
+Teoría de Diseño de BBDD Relacionales
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Donde: 
+–Un paciente tiene asignado para cada hospital un número de legajo 
+–Un legajo en un hospital se asigna a una única persona 
+–En un hospital trabajan muchos médicos y un médico puede trabajar en diversos hospitales –Un médico atiende a muchos pacientes 
+–Cada hospital posee un nombre y el mismo nombre se puede repetir para diferentes  hospitales 
+–Un paciente se atiende en muchos hospitales y de cada hospital que se atiende se registran  los médicos que lo atienden 
+…trabajando…
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajopaciente, dniMedico) Donde: 
+– Un paciente tiene asignado para cada hospital un número de legajo 
+– Un legajo en un hospital se asigna a una única persona 
+– En un hospital trabajan muchos médicos y un médico puede trabajar en diversos hospitales – Un médico atiende a muchos pacientes 
+– Cada hospital posee un nombre y el mismo nombre se puede repetir para diferentes  hospitales 
+– Un paciente se atiende en muchos hospitales y de cada hospital que se atiende se registran  los médicos que lo atienden 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+Analizo si el esquema cumple BCNF
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+ATENCIONES cumple con la definición de BCNF? 
+Para toda dependencia funcional se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+Cómo el esquema ATENCIONES no cumple con la definición  de BCNF, ya que al menos encontramos a la df1 donde  {codHospital} no es superclave del esquema ATENCIONES y  sabemos que se puede particionar para eliminar anomalías,  procedemos a particionar ATENCIONES contemplando la df1
+1. codHospital -> nombreHospital 
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+Cómo el esquema ATENCIONES no cumple con la definición de BCNF, ya que al  menos encontramos a la df1 donde {codHospital} no es superclave del esquema  ATENCIONES y sabemos que se puede particionar para eliminar anomalías,  procedemos a particionar ATENCIONES contemplando la df1.  
+Al particionar, tenemos: 
+A1(codHospital, nombreHospital) 
+A2 (codHospital, dniPaciente, legajoPaciente, dniMedico)
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A1(codHospital, nombreHospital) 
+A2 (codHospital, dniPaciente, legajoPaciente, dniMedico) Con el particionamiento propuesto: 
+¿Se perdió información?  
+¿Se perdieron dependencias funcionales?
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A1(codHospital, nombreHospital) 
+A2 (codHospital, dniPaciente, legajoPaciente, dniMedico) Con el particionamiento propuesto: 
+¿Se perdió información?  
+A1 ∩ A2 es clave en el esquema ATENCIONES , {codHospital} 
+Entonces no se perdió información
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A1(codHospital, nombreHospital) 
+A2 (codHospital, dniPaciente, legajoPaciente, dniMedico) 
+Con el particionamiento propuesto: 
+¿Se perdieron dependencias funcionales? 
+En A1, vale df1 
+En A2 valen las dfs 2 y 3 
+Entonces, no se perdieron dependencias funcionales.
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A1(codHospital, nombreHospital) 
+A2 (codHospital, dniPaciente, legajoPaciente, dniMedico) ¿Ambos esquemas quedaron en BCNF? 
+•En A1, vale df1. Donde {codHospital} es superclave del esquema  A1. A1 cumple BCNF. 
+•En A2 valen las dfs 2 y 3. En particular, existe la df2, donde  {legajoPaciente, codHospital } no es superclave de A2. Entonces,  podemos afirmar que no cumple BCNF
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A2 (codHospital, dniPaciente, legajoPaciente, dniMedico) 
+•En A2 valen las dfs 2 y 3. En particular, existe la df2, donde  {legajoPaciente, codHospital } no es superclave de A2. Entonces,  podemos afirmar que no cumple BCNF. 
+•Por lo antes mencionado, particionamos A2, para llevar a BCNF el  esquema 
+A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico)
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico) 
+¿Ambos esquemas quedaron en BCNF? 
+•En A3, vale df2 y df3.  
+•¿A3 está en BCNF?
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico) 
+•En A3, vale df2 ydf3.  
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+•¿Cuáles son las claves candidatas de A3?  
+cc1{legajoPaciente, codHospital}  
+cc2{dniPaciente, codHospital} 
+A3 cumple con la definición de BCNF? 
+Para toda dependencia funcional , de la forma X->A, válida en A3 se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico) 
+•En A3, vale df2 ydf3.  
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+•¿Cuáles son las claves candidatas de A3?  
+cc1{legajoPaciente, codHospital}  
+cc2{dniPaciente, codHospital} 
+A3 cumple con la definición de BCNF? 
+Si, cumple con la definición, los determinantes de ambas  dependencias funcionales son clave (un caso particular de superclave)  en A3
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico) 
+A4 cumple con la definición de BCNF? 
+•En A4, todos los atributos forman parte de la clave del esquema.  Cualquier dependencia que se halle va a ser trivial. A4 está en BCNF.
+• Ejercicio 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Dependencias Funcionales 
+df1) codHospital -> nombreHospital 
+df2) legajoPaciente, codHospital -> dniPaciente 
+df3) dniPaciente, codHospital -> legajoPaciente 
+Claves Candidatas 
+cc1) {codHospital, legajoPaciente, dniMedico} 
+cc2) {codHospital, dniPaciente, dniMedico} 
+A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico) 
+¿Qué pasó con la cc2? 
+•Al decidir particionar A2 contemplando la df2, se define en ese  punto del proceso a la cc1 como clave del esquema. 
+Cierre del proceso hasta BCNF sobre el esquema ATENCIONES
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Esquemas que cumplen BCNF:
+A1(codHospital, nombreHospital) 
+A3 (codHospital,legajoPaciente, dniPaciente) 
+A4 (codHospital,legajoPaciente, dniMedico) 
+Clave Primaria 
+{codHospital, legajoPaciente, dniMedico} 
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) Esquemas que cumplen BCNF: 
+
+A1(codHospital, nombreHospital) 
+A3 (codHospital,legajoPaciente, dniPaciente) A4 (codHospital,legajoPaciente, dniMedico) 
+Clave Primaria 
+{codHospital, legajoPaciente, dniMedico} 
+Notar que, el último  
+esquema que llevo a BCNF,  tiene todos los atributos de  una de las claves candidatas
+
+ATENCIONES(codHospital, nombreHospital, dniPaciente, legajoPaciente, dniMedico) 
+Esquemas que cumplen BCNF: 
+A1(codHospital, nombreHospital) 
+
+A3 (codHospital,legajoPaciente, dniPaciente) A4 (codHospital,legajoPaciente, dniMedico) 
+Clave Primaria 
+{codHospital, legajoPaciente, dniMedico} 
+Aun puede haber  redundancia en A4
+
+Teoría de diseño de BBDD Relacionales Análisis de pérdida de dependencias
+Teoría de Diseño de BBDD Relacionales
+• Hemos visto 
+–Como llevar un esquema a BCNF cuando no se pierde información ni dependencias  funcionales 
+–En particular, vimos el caso en el que los atributos de todas las dependencias  funcionales quedaron todos incluidos en alguna de las particiones generadas • Validación simple 
+• Resta ver: 
+–Qué sucede cuando los atributos de alguna dependencia funcional quedaron  distribuidos en más de una partición 
+• Validación formal mediante un algoritmo 
+–Qué hacer en el caso de que alguna dependencia funcional se pierda y no se  pueda avanzar con el proceso visto para llevar el esquema a BCNF 
+
+Al descomponer, no se debe perder:  Información 
+Dependencias funcionales 
+Validación simple 
+Validación formal mediante un  algoritmo
+…vimos para la  descomposición de un esquema 
+
+Teoría de Diseño de BBDD RelacionalesSupongamos: 
+R(a,b,c,d)  
+Donde vale: 
+F = {a🡪b, b🡪c, c🡪d, d🡪a} 
+Y alguien propone el siguiente particionamiento del esquema R 
+
+R1(a,b) 
+R2(b,c) 
+R3(c,d) 
+No se pierde información 
+¿Se pierden dependencias funcionales? 
+a🡪b vale en R1 
+b🡪c vale en R2 
+c🡪d vale en R3 
+d 🡪a?????? 
+Res = x 
+Mientras Res cambia 
+Para i= 1 _a_ cant_de_ particiones_realizadas Res = Res ∪ ((Res ∩ Ri)+ ∩ Ri) 
+Donde: 
+X es el determinante de la dependencia funcional que quiero  analizar si se perdió.  
+Res es un temporal donde se van guardando los atributos que se  pueden recuperar en cada iteración. 
+Ri es el conjunto de atributos de la partición representada por Ri ((Res ∩ Ri)+ ∩ Ri), asegura que quedan sólo los atributos que  pertenecen a la partición que se está tratando.
+Algoritmo para  analizar la pérdida  de dependencias  funcionales 
+
+Teoría de Diseño de BBDD RelacionalesSupongamos: 
+R(a,b,c,d)  
+Donde vale: 
+F = {a🡪b, b🡪c, c🡪d, d🡪a} 
+Y alguien propone el siguiente particionamiento del esquema R 
+
+R1(a,b) 
+R2(b,c) 
+R3(c,d) 
+No se pierde información 
+¿Se pierden dependencias funcionales? 
+a🡪b vale en R1 
+b🡪c vale en R2 
+c🡪d vale en R3 
+d 🡪a?????? 
+
+Res = ? 
+Mientras Res cambia 
+Para i= 1_a_cant_de_ particiones_realizadas Res = Res ∪ ((Res ∩ Ri)+ ∩ Ri) 
+Res= d 
+R(a,b,c,d) F= {a->b, b ->c, c->d, d->a} R1(a,b) R2(b,c) R3(c,d) 
+d🡪a ? 
+i=2 
+X+  
+Result:= X 
+While (hay cambios en result) do 
+For (cada dependencia funcional Y->Z en F )  do 
+if (Y ⊆ result) then 
+result := result ∪ Z
+
+i=1 
+∅ 
+Res= {c,d} ∪ (({c,d} ∩ {b,c})+ ∩ {b,c}) 
+
+Res= d ∪ ((d ∩ {a,b})+ ∩ {a,b}) = d ∅ 
+Paso i=2 
+Res= d ∪ ((d ∩ {b,c})+ ∩ {b,c}) = d  
+i=3 
+Res= d ∪ ((d ∩ {c,d})+ ∩ {c,d}) Res= d ∪ ((d)+ ∩ {c,d}) 
+Res= d ∪ ( {a,b,c,d} ∩ {c,d}) 
+Res= d ∪ {c,d} = {c,d} 
+Se itera nuevamente. 
+i=1 
+Res= {c,d} ∪ (({c,d} ∩ {a,b})+ ∩ {a,b}) = {c,d}  
+Res= {c,d} ∪ ((c)+ ∩ {b,c}) 
+Res= {c,d} ∪ ({a,b,c,d} ∩ {b,c}) 
+Res= {c,d} ∪ ({b,c}) = {c,d,b}  
+i=3 
+Res= {c,d,b} ∪ (({c,d,b} ∩ {c,d})+ ∩ {c,d}) = {c,d,b} Se itera nuevamente. 
+i=1 
+Res= {c,d,b} ∪ (({c,d,b} ∩ {a,b})+ ∩ {a,b}) = {c,d,b,a} 
+Se logra incorporar al atributo “a”, a partir del  atributo “d”. Entonces no se pierde la dependencia  funcional. 
+
+Teoría de Diseño de BBDD Relacionales
+Algoritmo para analizar la pérdida de dependencias funcionales  
+Res = x 
+Mientras Res cambia 
+Para i= 1 _a_ cant_de_ particiones_realizadas 
+Res = Res ∪ ((Res ∩ Ri)+ ∩ Ri) 
+SI luego de seguir el algoritmo para detectar pérdida de dependencias, se logra incluir en  Res, todos los atributos de la dependencia funcional que sospechaba haber perdido 
+Entonces NO perdí la dependencia funcional 
+Puedo continuar con el análisis de BCNF 
+CASO CONTRARIO 
+PERDÍ la dependencia funcional 
+NO puedo continuar con el análisis de BCNF 
+¿Qué hubiese pasado si  llegábamos a que la  dependencia funcional se  perdía?
+Ejem plo LIBROS
+Teoría de Diseño de BBDD Relacionales
+LIBROS (titulo, teatro, ciudad) 
+Donde: 
+• Un teatro se encuentra en una ciudad 
+• para cada ciudad en la que se presenta un título de libro, se conoce el teatro. • Un título se presenta en diferentes ciudades 
+Valen las siguientes dependencias funcionales 
+df1) teatro-> ciudad 
+df2) titulo, ciudad->teatro 
+Claves candidatas: 
+cc1: {titulo, ciudad} 
+cc2: {teatro, titulo} 
+Teoría de Diseño de BBDD RelacionalesLIBROS (titulo, teatro, ciudad) 
+Valen las siguientes dependencias funcionales 
+df1) teatro-> ciudad 
+df2) titulo, ciudad->teatro 
+Claves candidatas: 
+cc1: {titulo, ciudad} 
+cc2: {teatro, titulo} 
+¿LIBROS cumple con la definición de BCNF? 
+Para toda dependencia funcional se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial 
+Teoría de Diseño de BBDD RelacionalesLIBROS (titulo, teatro, ciudad) 
+Valen las siguientes dependencias funcionales 
+df1) teatro-> ciudad 
+df2) titulo, ciudad->teatro 
+Claves candidatas: 
+cc1: {titulo, ciudad} 
+cc2: {teatro, titulo} 
+LIBROS no cumple con la definición de BCNF 
+Existe la df1, tal que {teatro} no es superclave del esquema.  
+LIBROS (titulo, teatro, ciudad) 
+Valen las siguientes dependencias funcionales 
+df1) teatro-> ciudad 
+df2) titulo, ciudad->teatro 
+Claves candidatas: 
+cc1: {titulo, ciudad} 
+cc2: {teatro, titulo} 
+Divido el esquema LIBROS contemplando la df1 ya que {teatro} no es  superclave de dicho esquema. 
+L1(teatro, ciudad) 
+L2(teatro, titulo)
+LIBROS (titulo, teatro, ciudad) 
+Valen las siguientes dependencias funcionales 
+df1) teatro-> ciudad 
+df2) titulo, ciudad->teatro 
+Claves candidatas: 
+cc1: {titulo, ciudad} 
+cc2: {teatro, titulo} 
+Divido el esquema LIBROS contemplando la df1 ya que {teatro} no es  superclave de dicho esquema. 
+L1(teatro, ciudad) 
+L2(teatro, titulo) 
+Con el particionamiento propuesto: 
+¿Se perdió información?  
+L1 ∩ L2 es clave en el esquema L1 {teatro} 
+¿Se perdieron dependencias funcionales?

@@ -1,0 +1,458 @@
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+
+
+
+
+
+
+Hoy veremos… 
+1.DBMS 
+2.Tipos de DBMS 3.Claves 
+4.Mysql 
+5.SQL 
+6.DDL 
+7.DCL 
+8.DML 
+9.Vistas 
+10.Store Procedure 
+
+11.Funciones 
+12.Cursores 
+13.Transacciones 
+14.Triggers 
+15.Índices 
+16.Optimización de consultas 17.Seguridad de los datos
+
+Sistema 
+Gestor de 
+Bases de Datos  
+Software compuesto por un conjunto de  
+aplicaciones y  
+herramientas  
+que permiten la: 
+creación,  
+manipulación y 
+administración  
+de bases de datos.
+
+Está compuesto por: 
+DDL (Data Definition Languaje) DML (Data Manipulation Languaje) Data Dictionary
+
+Permite definir las  estructuras con la que se  
+almacenarán los datos. (Data Definition Languaje)
+
+
+
+(Data Manipulation Languaje) 
+Lenguaje que permite escribir  sentencias para: 
+Recuperar información 
+Agregar información 
+Eliminar información 
+Modificar información
+
+Posee las definiciones de  todas las variables de la  
+base. 
+Data Dictionary
+Debe proporcionar: 
+Abstracción de la información Independencia 
+Redundancia mínima 
+Consistencia 
+Seguridad
+Debe proporcionar (cont): Integridad 
+Respaldo y recuperación Control de la concurrencia Tiempo de respuesta
+
+
+Abstracción de la  información
+los DBMS esconden a los  usuarios detalles acerca del  almacenamiento físico de los  datos. Da lo mismo si una base  de datos ocupa uno o cientos  de archivos, este hecho se  hace transparente al usuario.  
+
+Independencia
+La independencia de los  datos consiste en la  
+capacidad de modificar el  esquema (físico o lógico) de  una base de datos sin tener  que realizar cambios en las  aplicaciones que se sirven  de ella.  
+
+Redundancia mínima
+Un buen diseño de una base  de datos logrará evitar la  aparición de información  repetida o redundante. 
+El objetivo debería ser lograr  una redundancia nula; no  obstante, en algunos casos  la complejidad de los  
+cálculos hace necesaria la  aparición de redundancias. 
+Consistencia
+En aquellos casos en los que no se ha logrado esta redundancia nula, será necesario vigilar que aquella información que aparece repetida se actualice de forma 
+coherente, es decir, que todos los datos repetidos se actualicen de forma simultánea. 
+Seguridad
+La información almacenada en una  base de datos puede llegar a tener un  gran valor. Los DBMS deben garantizar  que esta información se encuentra  asegurada frente a usuarios  
+malintencionados, que intenten leer  información privilegiada; frente a  ataques que deseen manipular o  destruir la información; o simplemente  ante las torpezas de algún usuario  autorizado pero despistado.  
+Normalmente, los DBMS disponen de  un complejo sistema de permisos a  usuarios y grupos de usuarios, que  permiten otorgar diversas categorías  de permisos.  
+Integridad
+Se trata de adoptar las medidas  necesarias para garantizar la  validez de los datos almacenados.  Es decir, se trata de proteger los  datos ante fallos de hardware,  datos introducidos por usuarios  descuidados, o cualquier otra  circunstancia capaz de corromper  la información almacenada.  
+
+Los DBMS deben proporcionar  
+una forma eficiente de realizar  
+copias de seguridad de la  
+información almacenada en ellos,  
+y de restaurar a partir de estas  
+copias los datos que se hayan  
+podido perder. Respaldo y  
+recuperación
+
+
+Control de la  concurrencia
+Habitualmente en la mayoría de  los entornos son muchas las  personas que acceden a una base  de datos, ya sea para recuperar  información o para almacenarla. Y  es también frecuente que dichos  accesos se realicen de forma  simultánea. Así pues, un DBMS  debe controlar este acceso  concurrente a la información, que  podría derivar en inconsistencias.  
+
+Tiempo de respuesta
+El DBMS debe proveer un acceso  eficiente minimizando el tiempo  que el DBMS tarda en darnos la  información solicitada y en  almacenar los cambios realizados  en grandes volúmenes y por  largos periodos de tiempo. 
+
+
+
+
+Relacional 
+NoSQL 
+Documentos Clave – Valor Grafos 
+Columnas
+
+Son las más antiguas y continúan  siendo las más utilizadas hoy en  día. 
+Se basan en el modelo relacional,  por lo tanto los datos se  
+almacenan en tablas o relaciones  que están compuestas de filas o  tuplas y columnas o campos. 
+Su fundamento es la teoría de las  bases de datos relaciones de  Codd, la cual es matemática y  establece un conjunto de reglas  para la organización,  
+almacenamiento y manipulación  de datos. Esta basada en el  álgebra relacional y la teoría de  conjuntos.
+
+Primaria Foránea
+Es un conjunto de atributos  
+de una tabla que cumple  
+con unicidad y no nulidad. 
+Primaria
+
+Es un conjunto de atributos de  una tabla que establece una  relación con otra tabla,  
+usualmente coincide con la  clave primaria de la tabla  relacionada. 
+Estas se utilizan para mantener  la integridad referencial que  asegura la coherencia de los  datos relacionados. 
+Foránea
+
+
+Es un RDMBS de código abierto  disponible para múltiples SO. 
+Actualmente pertenece a  ORACLE y existe un versión  comunity como una enterprise. 
+Se puede operar por consola y a  su vez existen distintos IDEs que  dan soporte como Workbench o  Dbeaver (multi-motor).  
+Implementa SQL como lenguaje  de manipulación de datos. 
+Al instalar se crea el  
+superusuario “root”.
+El motor de almacenamiento  determina como se organizan,  almacenan (formato) y manejan  los datos en el sistema. 
+MySQL tiene soporte para  distintos motores de  
+almacenamiento, como son  InnoDB, MyISAM, Memory, entre  otros. 
+Para visualizar los distintos  motores existe el comando  SHOW ENGINES.
+Actualmente InnoDB es el motor  por defecto, que brinda soporte  para transacciones que  
+cumplen con las propiedades  ACID, garantizando la  
+integridad referencial y  
+recuperación ante fallos. 
+MyISAM era el motor por  defecto en las antiguas  
+versiones, tiene la contra de no  ser transaccional y la ventaja de  ser muy eficiente en búsquedas  de texto. 
+Memory mantiene los datos en  memoria (HEAP).
+
+SQL es un lenguaje diseñado  especialmente para manipular y  consultar bases de datos  relacionales que se convirtió en  un estándar. 
+Es un desarrollo de IBM lanzado  en 1974, diseñado por  
+Chamberlin y Boyce, cuyo  último dialecto es el 2016. 
+Esta basado en el álgebra  relacional y el cálculo  
+relacional, esta compuesto por  un lenguaje de definición de  datos (DDL), un lenguaje de  manipulación de datos (DML) y  un lenguaje de control de datos  (DCL).
+
+
+
+El DDL permite definir la  estructura y características de  los elementos de las bases de  datos, como son las tablas,  columnas, claves primarias y  foráneas o restricciones. 
+Lo primero que permite es crear  una base de datos 
+Para usar una base de datos  creada se la debe poner en uso
+Las bases de datos en MySQL se  implementan como directorios que  contienen archivos, los cuales se  corresponden con las tablas de la  base de datos. Como no hay tablas en  la base de datos cuando se crean  inicialmente, el comando CREATE  DATABASE en MySQL crea sólo un  directorio bajo el directorio de datos  de MySQL y el archivo db.opt.  
+Si crea manualmente un directorio  bajo el directorio de datos (por  ejemplo, con mkdir), el servidor lo  considera como un directorio de base  de datos y muestra la salida de SHOW  DATABASES. 
+Create database y create schema son  sinónimos.
+
+Numéricos: 
+BIT, TINYINT, SMALLINT,  MEDIUMINT, INT, INTEGER,  BIGINT, REAL, DOUBLE, FLOAT,  DECIMAL, NUMERIC 
+Fechas: 
+DATE, TIME, TIMESTAMP,  DATETIME 
+Texto: 
+CHAR, VARCHAR, TINYTEXT,  TEXT, MEDIUMTEXT,LONGTEXT 
+Binarios 
+TINYBLOB, BLOB,  
+MEDIUMBLOB, LONGBLOB 
+Especiales: 
+ENUM 
+
+Tipos de datos
+Para crear tablas existe la  sentencia: CREATE TABLE, en la  cual se define su estructura  definiendo cada  
+campo/atributo con su tipo de  dato y restricciones. 
+Una restricción es una regla que  se aplica a los valores que se  insertan o actualizan en el  campo de una tabla para  garantizar la integridad. 
+Create
+
+Para crear tablas existe la sentencia: CREATE TABLE, en  la cual se define su estructura definiendo cada  campo/atributo con su tipo de dato y restricciones.
+
+
+Para crear tablas existe la  sentencia: CREATE TABLE, en la  cual se define su estructura  definiendo cada  
+campo/atributo con su tipo de  dato y restricciones. 
+Una restricción es una regla que  se aplica a los valores que se  insertan o actualizan en el  campo de una tabla para  garantizar la integridad. 
+Create
+
+Para modificar una tabla existe  
+la sentencia ALTER TABLE. 
+
+Alter
+Para modificar una tabla existe la sentencia ALTER TABLE.
+Para eliminar una tabla tenemos la  sentencia DROP. 
+Todos los datos se eliminan 
+La estructura de la tabla se elimina  (la información registrada en el  diccionario de datos)  
+Todas las transacciones pendientes  sobre la tabla se commitean 
+Todos los índices de la tabla se  eliminan 
+Esta operación no se puede  
+deshacer 
+Sólo el creador de la tabla o el usuario  root puede ejecutar la sentencia con  éxito.
+
+Primary Key Foreing Key Not Null 
+Unique 
+Default 
+Check 
+Autoincrement 
+
+Restricciones
+
+Identifica el campo/atributo que  
+será el identificador de la tabla.  
+Solo puede haber una por tabla. 
+Restricciones 
+Primary Key
+
+Referencia cruzadas entre tablas  para mantener la consistencia. 
+
+
+Restricciones Foreing Key
+
+Referencia cruzadas entre tablas para mantener la  
+
+consistencia.
+
+
+
+Asegura que el campo/atributo no  
+contenga valores nulos. 
+
+Restricciones 
+Not Null
+Garantiza que los valores del  
+campo/atributo sean únicos, evita  
+los duplicados. 
+Restricciones 
+Unique
+
+Establece un valor constante por  defecto para ese campo/atributo. 
+
+Restricciones Default
+
+Especifica una condición que los  
+valores del campo/atributo deben  
+cumplir. 
+Restricciones 
+Check
+Asociado a un campo/atributo de  
+tipo entero, al no enviar valor  
+asigna el valor máximo +1 que  
+posea dicho campo en la tabla,  
+comenzando por 1.  
+Solo puede haber una columna  
+con esta restricción, por lo general  
+la clave primaria. Restricciones Autoincrement
+
+
+
+El DCL permite manipular los  usuarios de la base de datos y  los permisos de cada uno de  ellos.
+Para crear usuarios tenemos la  
+sentencia CREATE USER. 
+
+Para eliminar usuarios tenemos  
+la sentencia DROP USER.
+
+Importante: Un usuario esta  
+formado por un nombre de usuario  
+y el host desde el que va a  
+establecer la conexión.  
+(@localhost en el ej.) Un mismo  
+nombre de usuario con distinto  
+host son considerados distintos  
+usuarios. 
+Para crear usuarios tenemos la sentencia CREATE USER. 
+Para eliminar usuarios tenemos la sentencia DROP USER.
+
+Para crear usuarios tenemos la  
+sentencia CREATE USER. 
+
+Para eliminar usuarios tenemos  
+la sentencia DROP USER.
+
+Importante: Un usuario esta  
+formado por un nombre de usuario  
+y el host desde el que va a  
+establecer la conexión.  
+(@localhost en el ej.) Un mismo  
+nombre de usuario con distinto  
+host son considerados distintos  
+usuarios. 
+Para otorgar permisos a un  
+usuarios tenemos la sentencia  
+GRANT. 
+Para quitar permisos a un  
+usuarios tenemos la sentencia  
+REVOKE.
+
+Para otorgar permisos a un usuarios tenemos la sentencia  GRANT. 
+
+Para quitar permisos a un usuarios tenemos la sentencia  REVOKE.
+
+
+Etapa 1: El servidor comprueba si  debe permitirle conectarse. 
+Etapa 2: Asumiendo que se conecta,  el servidor comprueba cada comando  que ejecuta para ver si tiene  
+suficientes permisos para hacerlo.  Por ejemplo, si intenta seleccionar  registros de una tabla en una base de  datos o eliminar una tabla de la base  de datos, el servidor verifica que  tenga el permiso SELECT para la tabla  o el permiso DROP para la base de  datos. 
+
+Control de acceso
+Si sus permisos cambian mientras  está conectado, estos cambios no  tienen porqué tener efecto  inmediatamente para el siguiente  comando que ejecute. 
+El servidor guarda información de  privilegios en las tablas de  permisos de la base de datos  mysql. El servidor MySQL lee el  contenido de dichas tablas en  memoria cuando arranca y las  vuelve a leer bajo ciertas  
+circunstancias. 
+
+Control de acceso
+Las decisiones acerca de control de  acceso se basan en las copias en  memoria de las tablas de permisos.  
+Puede decirle que las vuelva a leer  mediante el comando FLUSH  PRIVILEGES o ejecutando los  comandos mysqladmin flush privileges o mysqladmin reload . 
+
+Control de acceso
+
+
+
+El DML permite manipular los  datos de la base de datos como  insertar, eliminar, actualizar y  seleccionar registros.
+Para insertar datos en una tabla  
+tenemos la sentencia INSERT. 
+Si no se detallan las columnas,  
+la lista de valores debe estar en el  
+mismo orden de las columnas de la  
+
+tabla 
+Si se detallan las columnas,  pueden ser todas las columnas de  la tabla o sólo las que son  
+requeridas. En ambos casos debe  existir una concordancia entre  columna1 y valor1, y así  
+sucesivamente 
+Los valores carácter y fecha  deben encerrarse entre comillas  simples. 
+Insert
+
+Para insertar datos en una tabla tenemos la sentencia INSERT.
+Para insertar datos en una tabla  
+tenemos la sentencia INSERT. 
+Si no se detallan las columnas,  
+la lista de valores debe estar en el  
+mismo orden de las columnas de la  
+
+tabla 
+Si se detallan las columnas,  pueden ser todas las columnas de  la tabla o sólo las que son  
+requeridas. En ambos casos debe  existir una concordancia entre  columna1 y valor1, y así  
+sucesivamente 
+Los valores carácter y fecha  deben encerrarse entre comillas  simples. 
+Insert
+
+Olvidar colocar un valor a una  columna que es obligatoria (NOT  NULL) 
+Repetir un valor que no permite  valores duplicados 
+Colocar un valor que depende de  otra tabla y en ella no exista (No  encontrar una correspondencia con  una clave foránea) 
+Colocar un valor que no cumple con  una restricción de entidad (CHECK) 
+Colocar un valor que no corresponde  con el tipo de dato de la columna 
+Colocar un valor más grande del que  se puede almacenar en la columna 
+
+Errores comunes al  insertar
+
+Para actualizar datos en una tabla  
+tenemos la sentencia UPDATE. 
+Con una sola sentencia se pueden  
+modificar 0, 1 o más filas de la  
+tabla, esto depende de la  
+
+condición que se establezca en la  cláusula WHERE. 
+Cuidado! si no se coloca ninguna  condición se modifican todas las  filas de la tabla 
+Antes de aplicar la sentencia  UPDATE, se recomienda usar la  sentencia SELECT con la  
+condición que involucra las filas  que se van a modificar. 
+Update
+
+Para actualizar datos en una tabla tenemos la sentencia UPDATE.
+Para actualizar datos en una tabla  
+tenemos la sentencia UPDATE. 
+Con una sola sentencia se pueden  
+modificar 0, 1 o más filas de la  
+tabla, esto depende de la  
+
+condición que se establezca en la  cláusula WHERE. 
+Cuidado! si no se coloca ninguna  condición se modifican todas las  filas de la tabla 
+Antes de aplicar la sentencia  UPDATE, se recomienda usar la  sentencia SELECT con la  
+condición que involucra las filas  que se van a modificar. 
+Update
+Para eliminar datos en una tabla tenemos  la sentencia DELETE. 
+Con una sola sentencia se pueden  eliminar 0, 1 o más filas de la tabla, esto  depende de la condición que se  establezca en la cláusula WHERE. 
+Si ninguna fila coincide con la 
+condición, se recibe el mensaje “0  filas borradas” 
+Cuidado: si no se coloca ninguna  condición se eliminan todas las filas  de la tabla 
+Antes de aplicar la sentencia  
+DELETE, se recomienda usar la  
+sentencia SELECT con la condición  que involucra las filas que se van a  eliminar 
+Delete
+
+Para eliminar datos en una tabla tenemos la sentencia DELETE.
+
+Para eliminar datos en una tabla tenemos  la sentencia DELETE. 
+Con una sola sentencia se pueden  eliminar 0, 1 o más filas de la tabla, esto  depende de la condición que se  establezca en la cláusula WHERE. 
+Si ninguna fila coincide con la 
+condición, se recibe el mensaje “0  filas borradas” 
+Cuidado: si no se coloca ninguna  condición se eliminan todas las filas  de la tabla 
+Antes de aplicar la sentencia  
+DELETE, se recomienda usar la  
+sentencia SELECT con la condición  que involucra las filas que se van a  eliminar 
+Delete
+
+Para eliminar todos los datos en  
+una tabla tenemos la sentencia  
+TRUNCATE. 
+
+Truncate
+Para recuperar datos en una tabla  
+tenemos la sentencia SELECT. 
+posee tres partes básicas 
+SELECT donde seleccionamos el  
+
+listado de columnas que queremos  obtener como resultado. 
+FROM donde se indica las tablas  donde obtener los datos. 
+WHERE (opcional) especifica la  condición de los datos a devolver. 
+En el SELECT se puede utilizar el * para  retornar todos los valores, DISTINCT  para que no retorne valores repetidos. 
+Select
+
+Para recuperar datos en una tabla tenemos la sentencia SELECT.
+Para recuperar datos en una tabla  
+tenemos la sentencia SELECT. 
+posee tres partes básicas 
+SELECT donde seleccionamos el  
+
+listado de columnas que queremos  obtener como resultado. 
+FROM donde se indica las tablas  donde obtener los datos. 
+WHERE (opcional) especifica la  condición de los datos a devolver. 
+En el SELECT se puede utilizar el * para  retornar todos los valores, DISTINCT  para que no retorne valores repetidos. 
+Select
+Operadores de comparación: = Igual a 
+> Mayor que 
+>= Mayor o igual que 
+< Menor que 
+<= Menor o igual que 
+<> Diferente a (!=)(^=) 
+BETWEEN … AND … Entre dos  valores los cuales están  
+incluidos en el rango. 
+IN (Lista) En la lista de valores  dados 
+
+Select where
+Operadores de comparación (cont): IS NULL Es un valor nulo 
+LIKE Concuerda con un patrón 
+La condición de búsqueda  
+puede contener caracteres,  números y/o comodines: 
+% para representar cero o  más caracteres 
+_ para representar un  
+carácter  
+Se pueden combinar caracteres  y comodines. 
+
+Select where
+
+Operadores lógicos: 
+AND OR  
+NOT. 
+Select 
+where

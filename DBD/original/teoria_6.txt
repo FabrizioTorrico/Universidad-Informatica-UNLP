@@ -1,0 +1,956 @@
+Bases  de  
+Datos 1 
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+TEMAS GENERALES 
+B ases de Datos 1 
+1 2 3 4 5 
+
+Modelo de  Datos 
+Teoría de  Diseño de  Bases de  Datos  
+Álgebra  Relacional 
+DBMS  
+Relacional MySQL 
+Visualización  de Datos 
+
+TEMAS Y SUBTEMAS
+Álgebra Relacional (AR) 
+C onceptos Generales 
+L enguaje de C onsulta 
+ Operaciones fundamentales  Operaciones adicionales 
+L enguaje de Manipulación  Operaciones de manipulación 
+
+Lenguaje algebraico donde: 
+los cambios de estado se especifican  mediante operaciones,  
+los operandos son relaciones y  el resultado es una nueva relación
+Álgebra 
+Relacional 
+Lenguaje algebraico donde: 
+los cambios de estado se especifican  mediante operaciones,  
+los operandos son relaciones y  el resultado es una nueva relación 
+Proporciona una base teórica
+Álgebra 
+Relacional 
+
+Álgebra 
+Relacional 
+Lenguaje de Consulta Lenguaje de manipulación
+Álgebra 
+Relacional 
+Lenguaje de Consulta 
+Operaciones fundamentales Operaciones adicionales 
+Lenguaje de manipulación
+Álgebra 
+Relacional 
+Lenguaje de Consulta 
+Operaciones fundamentales Operaciones adicionales 
+Lenguaje de manipulación Operaciones de manipulación
+
+Álgebra Relacional 
+L enguaje de Consultas Operaciones Fundamentales
+
+Son suficientes para expresar cualquier consulta en  álgebra relacional 
+▪ Selección (σ) 
+▪ Proyección ( Π) 
+▪ Producto Cartesiano ( X ) 
+▪ Renombre (ρ ) 
+▪ De una relación 
+▪ De atributos de una relación 
+▪ Unión ( ∪ ) 
+▪ Diferencia ( - ) 
+Álgebra 
+Relacional 
+L enguaje de ConsultaOperaciones fundamentales 
+Selección  (σ) 
+Operación unaria (σcondición R) 
+Requiere una condición booleana Operaciones: and, or y not 
+El resultado es una relación con un  subconjunto “horizontal” de la relación  dada
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales 🞂 Selección (σ) 
+σ edad >= 30 ( Ingenieros ) 
+
+
+Proyección  (Π) 
+Operación unaria ( Π lista_de_atributos R ) 
+Dada una lista de atributos produce un  corte “vertical” de la relación  
+Los atributos de la lista se toman de  izquierda a derecha.
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪Proyección (Π) 
+Πnombre, edad (Ingenieros) 
+Nombre 
+Edad
+José 
+34
+Rosa 
+37
+María 
+25
+
+
+
+
+Producto  Cartesiano  ( X ) 
+Operación binaria (A X B) 
+El resultado es una relación que incluye  todas las tuplas posibles que se obtienen concatenando cada tupla de A con cada  una de las tuplas de B 
+La concatenación de una tupla  a=(a1, …, am) y una tupla 
+b=(bm+1, …, bm+n), es una tupla  t=(a1,…, am, bm+1, …, bm+n)
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪ Producto Cartesiano ( X ) 
+
+Ingenieros X Proyectos 
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪ Producto Cartesiano ( X ) 
+Ingenieros X Jefes 
+Ingenieros.E# 
+320 
+Ingenieros.Nombre 
+José 
+Ingenieros.Edad 
+34 
+Jefes.E# 
+320 
+Jefes.Nombre 
+José 
+Jefes.Edad 
+34
+320 
+José 
+34 
+421 
+Jorge 
+48
+322 
+Rosa 
+37 
+320 
+José 
+34
+322 
+Rosa 
+37 
+421 
+Jorge 
+48
+323 
+María 
+25 
+320 
+José 
+34
+323 
+María 
+25 
+421 
+Jorge 
+48
+
+
+
+
+Renombre  de una  
+relación  (ρ ) 
+Operación unaria (ρx R ) 
+El resultado es la relación R con nombre X
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪ Renombre de una relación (ρ ) 
+ρPROFESIONALES Ingenieros 
+
+
+Renombre  de atributos  de una  
+relación  
+(ρ ) 
+Operación unaria (ρx (lista_de_atributos)R ) 
+El resultado es la relación R con  nombre X y atributos nombrados como  se expresa en lista_de_atributos
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪ Renombre de atributos de una relación (ρ ) 
+ρPROFESIONALES(E#, NombreProfesional, Edad) Ingenieros 
+
+PROFESIONALES 
+E# 
+320 
+NombreProfesional 
+José 
+Edad 
+34
+322 
+Rosa 
+37
+323 
+María 
+25
+
+
+
+
+Unión  ( ∪ ) 
+Operación binaria (A ∪B) 
+El resultado es una relación en la que  se agrega a la relación A los elementos  (no repetidos) de la relación B 
+Es necesario que las relaciones A y B  sean de «unión compatible»
+Unión  ( ∪ ) 
+Operación binaria (A ∪B) 
+El resultado es una relación en la que se  agrega a la relación A los elementos (no  repetidos) de la relación B 
+Es necesario que las relaciones A y B sean de «unión compatible» 
+Relaciones con igual aridad (igual número de atributos) 
+El dominio del i-ésimo atributo de ambas relaciones debe ser el mismo (∀ i)
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪ Unión ( ∪ ) 
+Ingenieros ∪Jefes 
+
+
+Diferencia  ( - ) 
+Operación binaria (A - B) 
+El resultado es una relación donde están  los elementos que pertenecen a A y no  pertenecen a B 
+Es necesario que las relaciones A y B sean de «unión compatible» 
+Relaciones con igual aridad (igual número de atributos) 
+El dominio del i-ésimo atributo de ambas relaciones debe ser el mismo (∀ i)
+
+A R - L enguaje de C onsulta –Operaciones Fundamentales▪ Diferencia ( - ) 
+Ingenieros - Jefes 
+
+Álgebra Relacional 
+L enguaje de Consultas Operaciones Adicionales
+
+No agregan potencia al álgebra,  simplifican consultas.  
+Son reescribibles en término de  
+Álgebra 
+Relacional 
+
+operaciones fundamentales L enguaje de ConsultaOperaciones adicionales 
+
+Intersección ( ∩ ) 
+Producto Theta ( |X|θ ) 
+Producto Natural ( |X| ) 
+División ( % ) 
+Operación especial de Asignación ( ← ) 
+Álgebra 
+Relacional 
+L enguaje de ConsultaOperaciones adicionales 
+Operación binaria (A ∩ B) 
+El resultado es una relación con aquellas  tuplas que pertenecen a ambas  relaciones (al mismo tiempo) 
+Es necesario que las relaciones A y B  sean de «unión compatible» 
+Intersección  ( ∩ )
+
+R ∩ S es equivalente a R –( R – S ) Intersección  ( ∩)
+A R - L enguaje de C onsulta –Operaciones Adicionales▪ Intersección ( ∩ ) 
+Ingenieros Jefes 
+E# Nombre Edad E# Nombre Edad 
+
+
+José 
+34 
+Rosa 
+37 
+María 
+25
+
+
+
+320 320 322 421 323 
+Ingenieros ∩ Jefes 
+José 
+34
+Jorge 
+48
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operación binaria ( R |X| θ S ) 
+Genera una nueva relación con las  tuplas resultantes de aplicar una  operación de selección con la condición  indicada por θsobre el resultado de un  producto cartesiano 
+La condición (θ) se indica como una expresión booleana de términos (se  pueden usar conectores lógicos entre  las condiciones) 
+Producto Theta ( |X| θ )
+R |X| θ S es equivalente a σθ ( R X S ) 
+Producto Theta ( |X| θ )
+
+A R - L enguaje de C onsulta –Operaciones Adicionales▪ Producto Theta( |X| θ ) 
+Ingenieros |X| Ingenieros.edad =Jefes.edad Jefes 
+Ingenieros.E# 
+320 
+Ingenieros.Nombre 
+José 
+Ingenieros.Edad 
+34 
+Jefes.E# 
+320 
+Jefes.Nombre 
+José 
+Jefes.Edad 
+34
+
+
+
+A R - L enguaje de C onsulta –Operaciones Adicionales
+▪ Producto Theta( |X| θ ) 
+Ingenieros |X| Ingenieros.edad ≤ Jefes.edad Jefes 
+Ingenieros.E# 
+320 
+Ingenieros.Nombre 
+José 
+Ingenieros.Edad 
+34 
+Jefes.E# 
+320 
+Jefes.Nombre 
+José 
+Jefes.Edad 
+34
+320 
+José 
+34 
+421 
+Jorge 
+48
+322 
+Rosa 
+37 
+421 
+Jorge 
+48
+323 
+María 
+25 
+320 
+José 
+34
+323 
+María 
+25 
+421 
+Jorge 
+48
+
+
+
+A R - L enguaje de C onsulta –Operaciones Adicionales
+▪ Producto Theta( |X| θ ) 
+Ingenieros |X| Ingenieros.edad ≤ Jefes.edad and Ingenieros.E# ≠Jefes. E# Jefes 
+Ingenieros.E# 
+320 
+Ingenieros.Nombre 
+José 
+Ingenieros.Edad 
+34 
+Jefes.E# 
+421 
+Jefes.Nombre 
+Jorge 
+Jefes.Edad 
+48
+322 
+Rosa 
+37 
+421 
+Jorge 
+48
+323 
+María 
+25 
+320 
+José 
+34
+323 
+María 
+25 
+421 
+Jorge 
+48
+
+
+
+
+Operación binaria ( R |X| S ) 
+Genera una nueva relación con las  tuplas resultantes de aplicar una  operación de selección con la condición  indicada sobre el resultado de un  producto cartesiano 
+La condición se indica como una expresión booleana de términos (se  pueden usar conectores lógicos entre  las condiciones) 
+Producto  Natural  ( |X| )
+R |X| S es equivalente a  
+Πlista ( σcondición ( R X S ) ) 
+Donde:  
+condición implica a todos los atributos de R que están en S y  son iguales 
+lista elimina columnas repetidas (dejando una sola en el  conjunto) y los atributos que no tienen en común R y S  
+Producto  Natural  ( |X| )
+
+A R - L enguaje de C onsulta –Operaciones Adicionales▪ Producto Natural ( |X| ) 
+Postulantes Administrativos 
+
+
+Nombre 
+Edad 
+DNI
+Paula 
+19 
+29235142
+Martina 
+22 
+35215415
+Joaquín 
+28 
+28152478
+
+
+
+Nombre 
+Edad 
+Domicilio 
+DNI
+Martina 
+22 
+1 y 50 
+35215415
+Paula 
+19 
+8 y 49 
+29899632
+Pablo 
+32 
+26 y 50 
+20125789
+
+
+
+
+Postulantes|X| Administrativos 
+Nombre 
+Martina 
+Edad 
+22 
+DNI 
+35215415 
+Domicilio 
+1 y 50
+
+
+
+
+Operación binaria ( R % S ) 
+R dividendo  
+S divisor 
+Los atributos del divisor S deben ser un  subconjunto de los atributos de la  relación R con igual dominio 
+La relación resultante de la división,  llamémosla T, posee tuplas t tal que: Los valores de t deben aparecer en R  en combinación con todas las tuplas  de S 
+División  ( % )
+R%S es equivalente a: 
+Πatt(R)- att(S) R - Π att(R)- att(S) ((Π att(R)- att(S) ( R )x S) –R) 
+Donde: 
+att(R)- att(S) significan los atributos de la relación  R menos los atributos de la relación S 
+División  ( % )
+
+A R - L enguaje de C onsulta –Operaciones Adicionales▪ División ( % ) 
+R1 % R2 
+
+A R - L enguaje de C onsulta –Operaciones Adicionales▪ División ( % ) 
+Lugar_Trabajo Sucursales_Vip 
+
+
+Nombre 
+Sucursal
+Juan 
+Sucursal1
+Pedro 
+Sucursal1
+Juan 
+Sucursal2
+María 
+Sucursal 1
+Juan 
+Sucursal3
+
+
+
+Sucursal
+Sucursal1
+Sucursal2
+
+
+
+Lugar_Trabajo % Sucursales_Vip 
+Nombre
+Juan
+
+
+
+
+A R - L enguaje de C onsulta –Operaciones Adicionales▪ División ( % ) 
+Lugar_Trabajo Sucursales_Vip 
+
+
+Nombre 
+Sucursal 
+Color
+Juan 
+Sucursal1 
+Rojo
+Pedro 
+Sucursal1 
+Verde
+Juan 
+Sucursal2 
+Azul
+María 
+Sucursal 1 
+Rojo
+Juan 
+Sucursal3 
+Violeta
+Pedro 
+Sucursal1 
+Rojo
+Pedro 
+Sucursal2 
+Azul
+Juan 
+Sucursal1 
+Verde
+
+
+
+Sucursal 
+Color
+Sucursal1 
+Rojo
+Sucursal2 
+Azul
+Sucursal1 
+Verde
+
+
+
+Lugar_Trabajo % Sucursales_Vip 
+Nombre
+Juan
+Pedro
+
+
+
+
+Es una forma conveniente de expresar  operaciones complejas 
+Modularidad 
+El resultado de una operación se asigna temporalmente a una variable 
+La variable a la cual se asigna el  
+resultado de una operación se  
+puede usar en otras operaciones 
+Asignación  ( ← )
+
+A R - L enguaje de C onsulta –Operaciones Adicionales
+▪ Asignación ( ← ) 
+▪ Ejemplo 
+Lugar_Trabajo Sucursales_VipEmpleado 
+
+
+Nombre 
+Sucursal
+Juan 
+Sucursal1
+Pedro 
+Sucursal1
+Juan 
+Sucursal2
+María 
+Sucursal 1
+Juan 
+Sucursal3
+
+
+
+Sucursal
+Sucursal1
+Sucursal2
+
+
+
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+
+
+
+
+Empleados_Vip ← Lugar_Trabajo % Sucursales_Vip 
+Nombre
+Juan
+
+
+
+
+Empleados_Vip |X| Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+
+
+
+
+A R - L enguaje de C onsulta – En general-
+▪ Combinación de operaciones para formar consultas ▪ Las operaciones se pueden usar  
+▪ Aisladas o  
+▪ Combinadas (expresiones) 
+▪ Permiten resolver consultas complejas 
+▪ Se usan paréntesis cuando es necesario agrupar operaciones ▪ Notación lineal 
+Álgebra Relacional 
+L enguaje de Manipulación de Datos  Operaciones de manipulación
+
+Requieren de la operación de  asignación 
+Modifican la cantidad o los  valores de las tuplas de una  relación 
+Álgebra 
+Relacional 
+L enguaje de  
+Manipulación de datos
+Operaciones de  
+manipulación 
+Inserción ( ⋃ ) Eliminación ( ─ )  Actualización ( δ ) 
+Álgebra 
+Relacional 
+L enguaje de  
+Manipulación de datos
+Operaciones de  
+manipulación 
+La o las tuplas a insertar deben ser  compatibles con la relación 
+R ← R ⋃ E 
+Donde  
+R es la relación en la que se insertarán  los resultados de la expresión E 
+Inserción  ( ⋃ )
+
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Inserción ( ⋃ ) 
+▪ Ejemplo 
+
+Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+
+
+
+
+Empleado ← Empleado ⋃ {(“Joaquín”, “4 y 497”)} 
+
+Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+Joaquín 
+4 y 497
+
+
+
+
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Inserción ( ⋃ ) 
+▪ Ejemplo 
+
+Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+
+
+
+
+Empleado ← Empleado ⋃ 
+Empleado 
+
+{(“Joaquín”, “4 y 497”), (“Martina”, “1 y 32”)}Nombre Domicilio Juan 1 y 50 
+Pedro 120 y 43 
+María 150 y 62 
+Joaquín 4 y 497 
+Martina 1 y 32 
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Inserción ( ⋃ ) 
+▪ Ejemplo 
+
+Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+
+
+
+Asistentes 
+Nombre 
+Domicilio 
+DNI
+Joaquín 
+4 y 497 
+1234536
+Martina 
+1 y 32 
+2541258
+
+
+
+
+Empleado ←  
+Empleado ⋃ 
+(Π nombre, domicilio Asistentes) 
+Empleado 
+Nombre Domicilio Juan 1 y 50 Pedro 120 y 43 María 150 y 62 Joaquín 4 y 497 Martina 1 y 32 
+La o las tuplas a insertar deben ser  compatibles con la relación 
+R ← R ⋃ E 
+Donde  
+R es la relación en la que se insertarán  los resultados de la expresión E 
+Eliminación  ( ─ )
+
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Eliminación ( ─ )  
+▪ Ejemplo 
+Empleado 
+
+
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+Joaquín 
+4 y 497
+Martina 
+1 y 32
+
+
+
+Empleado ← Empleado – 
+{(“Joaquín”, “4 y 497”), (“Martina”, “1 y 32”)} 
+
+Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+
+
+
+
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Eliminación ( ─ )  
+▪ Ejemplo 
+Empleado 
+
+
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+Joaquín 
+4 y 497
+Martina 
+1 y 32
+
+
+
+Algunos_empleados ←  
+σnombre=“Martina” o nombre = “Joaquín” (Empleado) 
+Empleado ← Empleado – Algunos_empleados 
+Empleado 
+Nombre 
+Domicilio
+Juan 
+1 y 50
+Pedro 
+120 y 43
+María 
+150 y 62
+
+
+
+Permite actualizar un valor particular  de una tupla 
+δ att(R) ← E ( R ) 
+Donde  
+R es la relación a la que se le modificará el  atributo mencionado en att(R) , como  resultado de la expresión E 
+Actualización  ( δ )
+
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Actualización ( δ ) 
+▪ Ejemplo 
+
+Empleado 
+Nombre 
+Domicilio 
+Salario
+Juan 
+1 y 50 
+10200
+Pedro 
+120 y 43 
+15000
+María 
+150 y 62 
+22000
+
+
+
+δ salario ← salario * 1.2 ( Empleado )Empleado 
+Nombre 
+Domicilio 
+Salario
+Juan 
+1 y 50 
+12240
+Pedro 
+120 y 43 
+18000
+María 
+150 y 62 
+26400
+
+
+
+
+A R - L enguaje de Manipulación–Operaciones de manipulación
+▪ Actualización ( δ ) 
+▪ Ejemplo 
+
+Empleado 
+Nombre 
+Domicilio 
+Salario
+Juan 
+1 y 50 
+10200
+Pedro 
+120 y 43 
+15000
+María 
+150 y 62 
+22000
+
+
+
+
+δ salario ← salario * 1.2 (σnombre=“Juan” ( Empleado )) 
+
+Empleado 
+Nombre 
+Domicilio 
+Salario
+Juan 
+1 y 50 
+12240
+Pedro 
+120 y 43 
+15000
+María 
+150 y 62 
+22000
+
+
+
+
+E jercicio Práctico
+INMUEBLE(idInmueble, nroCatastro,localidad,metrosCuadrados,tasacionFiscal,idPropietario) PROPIETARIO(idPropietario, apellido, nombre, localidad, domicilio, dni) MULTA(idInmueble, idMulta, añoMulta, montoMulta, descripcionMulta) 
+Hallar aquellos propietarios que solamente poseen  propiedades en la localidad de "San Carlos de  
+Bariloche". Listar su nombre, apellido, localidad  
+donde vive y el dni.
+trabajando…
+INMUEBLE(idInmueble, nroCatastro,localidad,metrosCuadrados,tasacionFiscal,idPropietario) PROPIETARIO(idPropietario, apellido, nombre, localidad, domicilio, dni) 
+MULTA(idInmueble, idMulta, añoMulta, montoMulta, descripcionMulta) 
+Hallar aquellos propietarios que solamente poseen propiedades en la localidad de "San  Carlos de Bariloche". Listar su nombre, apellido, localidad donde vive y el dni. 
+Hallar propietarios que poseen propiedades en otro lugar que no sea la localidad de "San Carlos de  Bariloche" 
+Hallar propietarios que poseen propiedades en la localidad de "San Carlos de Bariloche" 
+Hallar propietarios que poseen propiedades en la localidad de "San Carlos de Bariloche“ y no tiene  propiedades en otro lugar 
+De los propietarios solo de propiedades de San Carlos de Bariloche, hallo nombre, apellido, localidad donde  vive y el dni
+trabajando…
+INMUEBLE(idInmueble, nroCatastro,localidad,metrosCuadrados,tasacionFiscal,idPropietario) PROPIETARIO(idPropietario, apellido, nombre, localidad, domicilio, dni) 
+MULTA(idInmueble, idMulta, añoMulta, montoMulta, descripcionMulta) 
+Hallar aquellos propietarios que solamente poseen propiedades en la localidad de "San  Carlos de Bariloche". Listar su nombre, apellido, localidad donde vive y el dni. 
+Hallar propietarios que poseen propiedades en otro lugar que no sea la localidad de "San Carlos de  Bariloche" 
+PropietariosNoBariloche ← ΠidPropietario (σ localidad ≠"San Carlos de Bariloche" (INMUEBLE))  
+Hallar propietarios que poseen propiedades en la localidad de "San Carlos de Bariloche" PropietariosBariloche ← ΠidPropietario (σ localidad ="San Carlos de Bariloche" (INMUEBLE))  
+Hallar propietarios que poseen propiedades en la localidad de "San Carlos de Bariloche“ y no tiene  propiedades en otro lugar 
+PropietariosSOLOBariloche ← (PropietariosBariloche – PropietariosNoBariloche)  
+De los propietarios solo de propiedades de San Carlos de Bariloche, hallo nombre, apellido, localidad donde  vive y el dni
+Π nombre,apellido,localidad,dni( PropietariosSOLOBariloche |X| PROPIETARIO) 
+E jercicio Práctico
+Ejercicio A 
+Lugar_trabajo (empleado, departamento) 
+Curso_departamento (departamento, curso) 
+Curso_realizado (empleado, curso) 
+a) ¿Quiénes son los empleados que han hecho todos los cursos,  independientemente de qué departamento los exija? 
+Curso_realizado % Π curso ( Curso_departamento )
+trabajando…
+Ejercicio A 
+Lugar_trabajo (empleado, departamento) 
+Curso_departamento (departamento, curso) 
+Curso_realizado (empleado, curso) 
+a) ¿Quiénes son los empleados que han hecho todos los cursos,  independientemente de qué departamento los exija? 
+Curso_realizado % Π curso ( Curso_departamento )
+E jercicio Práctico
+Ejercicio B 
+Lugar_trabajo (empleado, departamento) 
+Curso_departamento (departamento, curso) 
+Curso_realizado (empleado, curso) 
+b) ¿Qué empleados hicieron todos los cursos requeridos por  su departamento?
+trabajando…
+Ejercicio B 
+Lugar_trabajo (empleado, departamento) 
+Curso_departamento (departamento, curso) 
+Curso_realizado (empleado, curso) 
+b) ¿Qué empleados hicieron todos los cursos requeridos por su departamento? Los cursos que tienen que hacer los empleados: 
+Los empleados y los cursos que no hicieron: 
+Los empleados que hicieron todos los cursos exigidos por su departamento:
+
+Ejercicio B 
+Lugar_trabajo (empleado, departamento) 
+Curso_departamento (departamento, curso) 
+Curso_realizado (empleado, curso) 
+b) ¿Qué empleados hicieron todos los cursos requeridos por su departamento? 
+Los cursos que tienen que hacer los empleados: 
+A = Π empleado,curso ( Lugar_trabajo |X| Curso_departamento ) 
+Los empleados y los cursos que no hicieron: 
+B = A - ( Curso_realizado )  
+Los empleados que hicieron todos los cursos exigidos por su departamento: Π empleado ( Lugar_trabajo ) - Π empleado ( B )
+
+Bibliografía de la clase
+Bibliografía 
+• Codd, E. F. (1970). A relational model of data for large shared data banks.  Communications of the ACM, 13(6), 377-387. 
+• Codd, E. F. (1979). Extending the database relational model to capture more meaning.  ACM Transactions on Database Systems (TODS), 4(4), 397-434. 
+• Garcia-Molina, H. (2008). Database systems: the complete book. Pearson Education  India. 
+• Korth, H. F., & Silberschatz, A. (1993). Fundamentos de Base de Datos. Segunda  Edición en español.
+Importante! 
+Los slides usados en las clases teóricas de esta materia, no  son material de estudio por sí solos en ningun caso. 

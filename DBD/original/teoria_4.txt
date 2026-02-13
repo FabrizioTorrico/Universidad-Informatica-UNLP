@@ -1,0 +1,520 @@
+Bases  de  
+Datos 1 
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+TEMAS GENERALES 
+B ases de Datos 1 
+1 2 3 4 5 
+
+Modelo de  Datos 
+Teoría de  Diseño de  Bases de  Datos  
+Álgebra  Relacional 
+DBMS  
+Relacional MySQL 
+Visualización  de Datos 
+
+TEMAS Y SUBTEMAS 
+Vimos…
+Teoría de Diseño de Bases de Datos Relacionales 
+C onceptos Generales: 
+▪Anomalía 
+▪Dependencia Funcional 
+▪Dependencia Funcional Trivial 
+TEMAS Y SUBTEMAS 
+Hoy veremos…
+Teoría de Diseño de Bases de Datos Relacionales C onceptos Generales: 
+▪C lave de una relación 
+▪C lave candidata 
+▪Superclave 
+▪Axiomas de Armstrong 
+▪C lausura de un conjunto de atributos 
+Normalización: 
+▪Descomposición 
+▪Pérdida de Información 
+▪Pérdida de Dependencias Funcionales ▪Formas Normales 
+▪Boyce y Codd 
+
+Los atributos {A1, A2,…,An} son la clave de una  relación R si cumplen: 
+• {A1, A2,…,An} determinan func ionalmente a  todos los restantes atributos de la relación R
+Clave de  una 
+relación 
+Los atributos {A1, A2,…,An} son la clave de una  relación R si cumplen: 
+• {A1, A2,…,An} determinan func ionalmente a  todos los restantes atributos de la relación R 
+• No existe un subc onjunto de {A1, A2,…,An}  que determine func ionalmente a todos los  restantes atributos de la relación R  
+–E sto implica que una clave es un conjunto  minimal-
+Clave de  una 
+relación 
+
+Teoría de Diseño de BBDD Relacionales• Clave de una relación 
+– Ejemplo 
+–PERSONA(dni, nombre, edad, fechaNac) 
+df1: dni->nombre,edad,fechaNac 
+•Clave: {dni} 
+
+En caso de existir dos o más conjuntos de  atributos {A1, A2,…,An} , {B 1, B 2,…,B k} , … {N1,  N2,…,Nm} en una relación R tales que  
+{A1, A2,…,An} determinan func ionalmente a todos  los restantes atributos de la relación R 
+{B 1, B 2,…,B k} , … y {N1, N2,…,Nm} también por sí  mismos determinan al resto de los atributos de R 
+No existe un subc onjunto de {A1, A2,…,An} o {B1,  B 2,…,B k} , … o {N1, N2,…,Nm} que determine  func ionalmente a todos los atributos de R  
+E ntonces {A1, A2,…,An} , {B 1, B 2,…,B k} , … {N1,  N2,…,Nm} son C L AVE S C ANDIDATAS para la  relación R
+Clave  
+candidata de una 
+relación 
+
+Teoría de Diseño de BBDD Relacionales
+• Clave de una relación /Clave candidata 
+– Ejemplo: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNacimiento, nroLegajo) Donde 
+• Una persona posee un único número de legajo asignado 
+• Un número de legajo pertenece a una sola persona 
+– Se pueden enunciar las siguientes dfs 
+df1) dni -> nombre, edad, fechaNac, nroLegajo 
+df2) nroLegajo -> nombre, edad, fechaNac, dni 
+¿Clave o claves candidatas? 
+Clave candidata 1 (cc1): {dni} 
+Clave candidata 2 (cc2): {nroLegajo} 
+Teoría de Diseño de BBDD Relacionales
+• Clave de una relación /Clave candidata 
+– Ejemplo: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNacimiento, nroLegajo, carrera) » Donde 
+• Una persona puede cursar diversas carreras 
+• Nombre indica como se llama la persona 
+• Una persona posee un único número de legajo asignado para cada carrera que cursa 
+• Un número de legajo pertenece a una sola persona de una carrera 
+df1) dni -> nombre, edad, fechaNac 
+df2) nroLegajo, carrera -> dni 
+df3) dni, carrera -> nroLegajo 
+¿Clave o claves candidatas? 
+Clave candidata 1 (cc1): {nroLegajo, carrera } 
+Clave candidata 2 (cc2): {dni, carrera } 
+
+Los atributos {A1, A2,…,An} son la superclave de  una relación R si cumplen: 
+{A1, A2,…,An} determinan funcionalmente a todos los restantes atributos de la relación R 
+Notar que: 
+• Una clave está c ontenida en una superclave 
+• Una superclave no necesariamente es minimal (como lo es la clave por la segunda condición de su definición)
+Super Clave  de una 
+relación 
+
+Teoría de Diseño de BBDD Relacionales• Superclave de una relación 
+– Ejemplo 
+–PERSONA(dni, nombre, edad, fechaNacimiento) 
+df1: dni->nombre,edad,fechaNac 
+•superclave: {dni, nombre} 
+E jercicio Práctico
+
+Actividades 
+Determinar la o las claves  candidatas 
+Hallar las dependencias funcionales
+
+Teoría de Diseño de BBDD Relacionales
+Ejercicio A 
+Dada la relación 
+VENTAS(codCliente, nombre, codVenta, monto) 
+–Donde: 
+•Un cliente realiza muchas compras 
+•Una compra es realizada por un solo cliente 
+• El monto representa el valor total de la compra realizada por un  cliente 
+–Determinar las dependencias funcionales (dfs) y clave o clave  candidatas válidas en VENTAS 
+…trabajando…
+Teoría de Diseño de BBDD Relacionales
+VENTAS(codCliente, nombre, codVenta, monto) 
+– Donde: 
+• Un cliente realiza muchas compras 
+• Una compra es realizada por un solo cliente 
+• El monto representa el valor total de la compra realizada por un cliente 
+– Determinar las dependencias funcionales (dfs) válidas en VENTAS 
+df1) codCliente -> nombre 
+df2) codVenta -> codCliente, monto 
+Clave candidata (codVenta) 
+Teoría de Diseño de BBDD Relacionales
+Ejercicio B 
+Dada la relación 
+VENTAS1(codCliente, nombreCliente, codVenta, monto) 
+–Donde: 
+•Un cliente realiza muchas compras 
+•Una compra puede ser realizada por más de un cliente 
+• El monto representa el valor total de la compra realizada por cada cliente –Determinar las dependencias funcionales (dfs) y clave o claves candidatas válidas  en VENTAS1 
+…trabajando…
+Teoría de Diseño de BBDD Relacionales
+Ejercicio 
+Dada la relación 
+VENTAS1(codCliente, nombre, codVenta, monto) 
+– Donde: 
+• Un cliente realiza muchas compras 
+• Una compra puede ser realizada por más de un cliente 
+• El monto representa el valor total de la compra realizada por cada cliente 
+– Determinar las dependencias funcionales (dfs) válidas en VENTAS1 
+df1) codCliente -> nombre 
+df2) codVenta, codCliente ->monto 
+Clave candidata (codVenta, codCliente ) 
+Teoría de Diseño de BBDD Relacionales
+Ejercicio C 
+Dada la relación 
+PERSONAEMPLEADA(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+Donde 
+– En cada departamento hay un jefe para todos los empleados. Un mismo jefe puede estar asignado a más de un  departamento 
+– Una persona puede trabajar en más de un departamento y en cada uno de ellos puede tener un código de empleado  diferente 
+– El código de empleado no se repite para un mismo departamento, puede repetirse en diferentes departamentos – Domicilio indica el lugar en el que vive una persona. Mas de una persona pueden vivir en el mismo domicilio – Nombre indica la forma en la que se llama una persona. Notar que diferentes personas pueden llamarse igual – fIngDepto es la fecha de ingreso a un departamento 
+Determinar las dependencias funcionales y clave o claves candidatas válidas en PERSONAEMPLEADA 
+…trabajando…
+Teoría de Diseño de BBDD Relacionales
+PERSONAEMPLEADA(dni, nombre, domicilio, codDepto, fIngDepto, codEmpDepto, jefe) 
+Donde 
+– En cada departamento hay un jefe para todos los empleados. Un mismo jefe puede  estar asignado a más de un departamento 
+– Una persona puede trabajar en más de un departamento y en cada uno de ellos  puede tener un código de empleado diferente 
+– El código de empleado no se repite para un mismo departamento, puede repetirse en  diferentes departamentos 
+– Domicilio indica el lugar en el que vive una persona. Mas de una persona pueden vivir  en el mismo domicilio 
+– Nombre indica la forma en la que se llama una persona. Notar que diferentes  
+personas pueden llamarse igual 
+– fIngDepto es la fecha de ingreso a un departamento 
+Determinar las dependencias funcionales válidas en PERSONAEMPLEADA 
+df1) dni -> nombre, domicilio 
+df2) codDepto -> jefe 
+df3) codDepto, codEmpDepto -> dni, fIngDepto 
+df4) codDepto, dni -> codEmpDepto, fIngDepto 
+Teoría de Diseño de BBDD Relacionales
+Ejercicio 
+Dada la relación 
+PERSONAEMPLEADA(dni, nombre, domicilio, codDepto, fIngDepto, codEmpDepto, jefe) 
+Determinar las dependencias funcionales válidas en PERSONAEMPLEADA 
+df1) dni -> nombre, domicilio 
+df2) codDepto -> jefe 
+df3) codDepto, codEmpDepto -> dni, fIngDepto 
+df4) codDepto, dni -> codEmpDepto, fIngDepto 
+Claves candidatas 
+Cc1: (codDepto, codEmpDepto ) 
+Cc2: (codDepto, dni ) 
+Teoría de Diseño de BBDD Relacionales
+Ejercicio D 
+Dada la relación 
+PERSONAEMPLEADA1(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) Donde 
+– Cada persona en un departamento tiene asignado a un jefe. El mismo jefe puede estar asignado a diferentes  personas de un departamento o de diversos departamentos 
+– Una persona puede trabajar en más de un departamento y en cada uno de ellos puede tener un código de  empleado diferente 
+– El código de empleado no se repite para un mismo departamento, puede repetirse en diferentes  departamentos 
+– Domicilio indica el lugar en el que vive una persona. Mas de una persona pueden vivir en el mismo domicilio – Nombre indica la forma en la que se llama una persona. Notar que diferentes personas pueden llamarse igual – fIngDepto es la fecha de ingreso a un departamento 
+Determinar las dependencias funcionales y clave o clave candidatas válidas en PERSONAEMPLEADA1 
+…trabajando…
+Teoría de Diseño de BBDD Relacionales
+PERSONAEMPLEADA1(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+Donde 
+– Cada persona en un departamento tiene asignado a un jefe. El mismo jefe puede estar  asignado a diferente personas de un departamento o de diversos departamentos – Una persona puede trabajar en mas de un departamento y en cada uno de ellos puede  tener un código de empleado diferente 
+– El código de empleado no se repite para un mismo departamento, puede repetirse en  diferentes departamentos 
+– Domicilio indica el lugar en el que vive una persona. Mas de una persona pueden vivir en  el mismo domicilio 
+– Nombre indica la forma en la que se llama una persona. Notar que diferentes personas  pueden llamarse igual 
+– fIngDepto es la fecha de ingreso a un departamento 
+Determinar las dependencias funcionales válidas en PERSONAEMPLEADA1 
+df1) dni -> nombre, domicilio 
+df2) codDepto, codEmpDepto -> dni, jefe, fIngDepto 
+df3) codDepto, dni -> codEmpDepto, jefe, fIngDepto 
+Teoría de Diseño de BBDD Relacionales
+Ejercicio 
+Dada la relación 
+PERSONAEMPLEADA1(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+Dependencias funcionales: 
+df1) dni -> nombre, domicilio 
+df2) codDepto, codEmpDepto -> dni, jefe, fIngDepto 
+df3) codDepto, dni -> codEmpDepto, jefe, fIngDepto 
+Claves candidatas: 
+Cc1: (codDepto, codEmpDepto ) 
+Cc2: (codDepto, dni ) 
+Teoría de Diseño de BBDD RelacionalesEjercicio E 
+–EMPRESA(idGerente, nombreGerente, idEmpleado, nombreEmpleado,  idEmpleadoMaestranza) 
+Donde: 
+–El id de gerente es único 
+–El id del empleado es único 
+–Cada empledo responde a un único gerente 
+–El idEmpleadoMaestranza representa el identificador de cada uno de los  empleados de maestranza de la empresa, de los cuales se saben son muchos. 
+…trabajando…
+Teoría de Diseño de BBDD Relacionales
+• Ejemplo 
+– EMPRESA(idGerente, nombreGerente, idEmpleado, nombreEmpleado,  
+idEmpleadoMaestranza) 
+• Donde: 
+– El id de gerente es único 
+– El id del empleado es único 
+– Cada empledo responde a un único gerente 
+– El idEmpleadoMaestranza representa el identificador de cada uno de los empleados de  
+maestranza de la empresa, de los cuales se saben son muchos. 
+Dependencias funcionales válidas en EMPRESA: 
+df1) idGerente -> nombreGerente 
+df2) idEmpleado -> nombreEmpleado, idGerente 
+Teoría de Diseño de BBDD Relacionales
+• Ejemplo 
+– EMPRESA(idGerente, nombreGerente, idEmpleado, nombreEmpleado,  
+idEmpleadoMaestranza) 
+• Donde: 
+– El id de gerente es único 
+– El id del empleado es único 
+– Cada empledo responde a un único gerente 
+– El idEmpleadoMaestranza representa el identificador de cada uno de los empleados de  
+maestranza de la empresa, de los cuales se saben son muchos. 
+Dependencias funcionales válidas en EMPRESA: 
+df1) idGerente -> nombreGerente 
+df2) idEmpleado -> nombreEmpleado, idGerente 
+Claves Candidatas en EMPRESA 
+cc1: (idEmpleado, idEmpleadoMaestranza) 
+Teoría de diseño de BBDD Relacionales Axiomas de Armstrong
+¿Cómo deducir nuevas dependencias  funcionales a partir de un conjunto  de dependencias dado?
+
+• Permiten inferir nuevas  
+dependencias funcionales dado un  conjunto base que resultó evidente  
+• Aplicándolos hallo un conjunto  completo y seguro donde todas las  dependencias funcionales halladas  son correctas 
+• Al generar todas las dependencias  funcionales algunas son triviales
+Axiomas de  Armstrong 
+• Axiomas Básicos 
+•Reflexión 
+•Aumento 
+•Transitividad 
+• Axiomas que se deducen a partir de los  básicos 
+•Unión 
+•Descomposición 
+•Pseudotransitividad
+Axiomas de  Armstrong 
+
+Teoría de Diseño de BBDD Relacionales• Axiomas de Armstrong 
+Reflexión 
+X es un conjunto de atributos  
+y  
+Y⊆X entonces X -> Y 
+Sabemos que a -> a, luego se puede decir que a,b -> a 
+Demostración: 
+Si Y⊆X y existen dos tuplas diferentes de R tales que t1[x]=t2[x] por definición de  dependencia funcional t1[y]=t2[y] 
+Teoría de Diseño de BBDD Relacionales
+• Axiomas de Armstrong 
+Aumento 
+Si X ->Y ; 
+Z es un conjunto de atributos,  
+entonces  
+Z,X -> Z,Y 
+Demostración: 
+Asumamos que X->Y vale pero X,Z->Y,Z no vale 
+Si X->Y entonces cada vez que  
+1) t1[x]=t2[x] implica  
+2) t1[y]=t2[y] 
+Por otro lado, cada vez que  
+3) t1[x,z]=t2[x,z] implica  
+4) t1[y,z] <> t2[y,z]  
+De 1) y 3)se deduce t1[z]=t2[z] 
+De 2) y 4) se deduce que t1[y,z]=t2[y,z] 
+Teoría de Diseño de BBDD Relacionales• Axiomas de Armstrong 
+Transitividad 
+Si X ->Y ;  
+Y ->Z,  
+entonces X -> Z 
+Demostración: 
+1) X ->Y  
+2) Y ->Z 
+t1[x]=t2[x] implica por 1) 
+t1[y]=t2[y] implica por 2) 
+t1[z]=t2[z] entonces 
+X -> Z 
+Teoría de Diseño de BBDD Relacionales
+• Axiomas de Armstrong 
+Unión 
+Si X ->Y ;  
+X ->Z,  
+entonces X -> Y,Z 
+Demostración: 
+1) X ->Y  
+2) X ->Z 
+Si X ->Y , por aumentación vale que X ->XY  
+Si X ->Z , por aumentación vale que X,Y ->Y,Z 
+Luego por transitividad, X ->Y,Z 
+Teoría de Diseño de BBDD Relacionales
+• Axiomas de Armstrong 
+Descomposición 
+Si X ->Y,Z 
+entonces X -> Y , X -> Z 
+Demostración: 
+X ->Y,Z  
+por reflexividad vale que Y,Z ->Y  
+Luego, por transitividad X->Y 
+Por reflexividad también vale que Y,Z ->Z 
+Luego por transitividad, también vale que X->Z 
+Teoría de Diseño de BBDD Relacionales• Axiomas de Armstrong 
+Pseudotransitividad 
+Si X ->Y; Y,Z->W entonces X, Z-> W 
+Demostración: 
+X ->Y 
+por aumento vale que X,Z ->Y,Z 
+Por otro lado, se sabe qué Y,Z->W  
+Luego por transitividad, vale que X,Z->W 
+Teoría de diseño de BBDD Relacionales C lausura de un conjunto de atributos
+¿Cómo se puede comprobar que un  conjunto de atributos {A1, A2,…,An}  de una relación R permite recuperar  
+al resto de los atributos de dicha  relación?
+
+• sea F un conjunto de dependencias funcionales  sobre un esquema R y, 
+• sea X un subconjunto de R. 
+La clausura del conjunto de atributos X  respecto de F, se denota X+ y es el  conjunto de atributos A tal que la  dependencia X -> A puede deducirse a  partir de F, por los axiomas de Armstrong 
+Es decir, X+ son todos los atributos  determinados por X en R
+Clausura de  un conjunto  de atributos 
+X + 
+Result:= X 
+While (hay cambios en result)  do 
+For (cada dependencia  
+funcional Y->Z en F ) do 
+if (Y ⊆ result) then 
+result := result ∪ Z 
+sea F un conjunto de dependencias funcionales sobre un esquema R y, sea X un subconjunto de R.
+Clausura de  un conjunto  de atributos X + 
+Algoritmo para  hallar X + 
+
+Algoritmo para hallar X + ¿ Cómo funciona ?
+Teoría de Diseño de BBDD Relacionales
+• Ejemplo  
+Dada la relación: PERSONA(dni, nombre, edad, fechaNacimiento, nroLegajo,  carrera) 
+Donde 
+• Una persona puede cursar diversas carreras 
+• Nombre indica como se llama la persona 
+• Una persona posee un único número de legajo asignado para cada carrera que cursa • Un número de legajo pertenece a una sola persona de una carrera 
+df1) dni -> nombre, edad, fechaNac 
+df2) nroLegajo, carrera -> dni 
+df3) dni, carrera -> nroLegajo 
+Clave candidata 1 (cc1): {nroLegajo, carrera }  
+Clave candidata 2 (cc2): {dni, carrera } 
+Teoría de Diseño de BBDD Relacionales
+• Ejemplo  
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNacimiento, nroLegajo, carrera) df1) dni -> nombre, edad, fechaNac 
+df2) nroLegajo, carrera -> dni 
+df3) dni, carrera -> nroLegajo 
+Clave candidata 1 (cc1): {nroLegajo, carrera } 
+Clave candidata 2 (cc2): {dni, carrera } 
+Por ejemplo, podríamos preguntarnos: ¿Es cierto que a partir de los  atributos de cc1, puedo recuperar los atributos restantes de PERSONA? •Para ello podemos ejecutar el algoritmo de X+ instanciándolo con la  información de PERSONA 
+
+Teoría de Diseño de BBDD RelacionalesResult:= X 
+While (hay cambios en result) do 
+For (cada dependencia funcional Y->Z en F ) do 
+if (Y ⊆ result) then 
+result := result ∪ Z 
+F={dni -> nombre, edad, fechaNac; nroLegajo, carrera -> dni ; 
+dni, carrera -> nroLegajo} 
+
+PERSONA(dni, nombre, edad, fechaNacimiento, nroLegajo,  
+carrera) 
+Hallar (nroLegajo, carrera )+ 
+Result= (nroLegajo, carrera ) 
+Paso 1) Tomamos la dep. fun: dni -> nombre, edad, fechaNac, {dni} no está incluido en result, no  agrego nada a result => (nroLegajo, carrera ) 
+Paso 2) Tomamos la dep. fun. nroLegajo, carrera -> dni , {nroLegajo, carrera} está incluido en result,  agrego {dni} a result => (nroLegajo, carrera, dni ) 
+Paso 3) Tomamos la dep. fun. dni, carrera -> nroLegajo, {dni, carrera} está incluido en result, agrego  {nroLegajo} a result => (nroLegajo, carrera, dni ) 
+Como ya recorrí todas las dependencias funcionales y result cambió vuelvo a iterar 
+Paso 1) Tomamos la dep. fun. dni -> nombre, edad, fechaNac, {dni} está incluido en result, agrego  {nombre, edad, fechaNac} a result => (nroLegajo, carrera, dni , nombre, edad, fechaNac) 
+RECUPERE A TODOS LOS ATRIBUTOS DE PERSONA!  
+Teoría de Diseño de BBDD Relacionales
+• De la misma manera podríamos haber probado con la  
+otra clave candidata 
+• Recordar que este algoritmo NO asegura que el  
+conjunto de atributos de partida sea mínimo 
+Teoría de Diseño de BBDD Relacionales• Hasta ahora vimos, para una relación R 
+–Cómo hallar la o las claves candidatas 
+• Y como usar el algoritmo de la clausura de atributos para corroborar que a partir de  un subconjunto de atributos de R se puede recuperar al resto de los atributos de la  relación (aunque éste no asegura que dicho subconjunto sea mínimo) 
+–Cómo hallar dependencias funcionales 
+• Y su conjunto completo mediante los Axiomas de Armstrong 
+• A continuación: 
+– Considerando las dependencias funcionales y las claves candidatas, veremos conceptos  necesarios para realizar un proceso que permite generar relaciones que cumplan  ciertas condiciones de un buen diseño (quitando anomalías) con el fin de normalizar esquemas 
+Teoría de diseño de BBDD Relacionales 
+Normalización de esquemas de relación. Algunos conceptos.
+¿ Cómo generar relaciones  que cumplan ciertas  condiciones de un buen  diseño?
+Teoría de Diseño de BBDD Relacionales• Descomposición o particionamiento de un esquema  
+–Es una forma aceptada de eliminar las anomalías de una relación 
+–Consiste en separar los atributos de una relación en dos nuevas  relaciones (bajo ciertos criterios) 
+–Al particionar, no se debe perder  
+•Información 
+•Dependencias funcionales 
+
+Dado un esquema R 
+donde vale una dependencia  funcional X->Y  
+R se descompone/particiona en  R1(X, Y) 
+R2(R-Y)
+Descomposición de un esquema 
+Al descomponer, no se debe perder:  Información 
+Dependencias funcionales 
+Validación simple 
+Validación formal mediante un  algoritmo
+Descomposición de un esquema 
+Descomposición de un esquema 
+Si a un esquema R, se lo particiona en dos  subesquemas R1 y R2  
+entonces, se debe cumplir alguna de las  siguientes condiciones: 
+R1 ∩ R2 clave en el esquema R1  o bien, 
+
+R1 ∩ R2 clave en el esquema R2 Pérdida de  Información
+
+Al particionar, se debe verificar que cada una de las  dependencias funcionales que valían en el esquema R,  sigan valiendo en alguna de las particiones Ri.  
+Cuando se chequean las dependencias funcionales  pueden ocurrir dos cosas: 
+los atributos de la dependencia funcional  original quedaron todos incluidos en alguna de  las particiones generadas 
+=> Validación simple 
+los atributos de la dependencia funcional  original quedaron distribuidos en más de una  partición 
+=>Validación formal mediante un algoritmo 
+Descomposición de un esquema 
+Pérdida de  
+dependencias funcionales
+Al particionar, se debe verificar que cada una de las  dependencias funcionales que valían en el esquema R,  sigan valiendo en alguna de las particiones Ri.  
+Cuando se chequean las dependencias funcionales  pueden ocurrir dos cosas: 
+los atributos de la dependencia funcional  original quedaron todos incluidos en alguna de  las particiones generadas 
+=> Validación simple 
+los atributos de la dependencia funcional  original quedaron distribuidos en más de una  partición 
+=>Validación formal mediante un algoritmo 
+Descomposición de un esquema 
+Pérdida de  
+dependencias funcionales
+
+Teoría de diseño de BBDD Relacionales 
+Normalización de esquemas de relación. Formas Normales
+
+Criterio para determinar grado de  vulnerabilidad a inconsistencias y  anomalías 
+Existen diferentes formas normales 
+Al lograr aplicar una mayor forma  normal se logrará menor vulnerabilidad
+Forma  Normal (FN) 
+
+Teoría de Diseño de BBDD Relacionales Algunas Formas Normales
+•Primera Forma Normal (1FN) 
+•Segunda Forma Normal (2FN) 
+•Tercera Forma Normal (3FN) 
+•Forma Normal de Boyce y Codd 
+
+Se determinan a partir  de las dependencias  funcionales 
+El esquema no debe  tener atributos  polivalentes o  
+compuestos 
+Conocida por su acrónimo en inglés  de BCNF 
+Particionar llevando un esquema a  esta FN, asegura que: 
+las anomalías dejan de estar (sólo  puede quedar redundancia),  
+que no se pierda información y,  en algunos casos, asegura que no se  pierdan dependencias funcionales
+Forma  Normal D e 
+Boyce  y 
+Codd 
+(FNBC) (BCNF) 
+Un esquema de relación está en BCNF sí,  siempre que una dependencia funcional  de la forma X->A es válida en R,  entonces se cumple que: 
+X es superclave de R  
+o bien 
+X->A es una dependencia funcional trivial
+Forma  Normal D e 
+Boyce  y 
+Codd 
+(FNBC) (BCNF) 
+
+Teoría de Diseño de BBDD Relacionales• Hasta ahora vimos que 
+–Las formas normales se usan para sacar anomalías 
+–A mayor forma normal, menos vulnerabilidad 
+• A continuación 
+–Intentaremos llevar, en principio, un esquema a la Forma Normal de Boyce y  Codd para normalizarlo 
+Para normalizar un esquema (en principio) y  propiciar un buen diseño, vamos a valernos de: 
+• las dependencias funcionales del esquema • las claves candidatas 
+• la definición de BCNF 
+• la descomposición o particionamiento del  esquema
+Para normalizar un esquema (en principio) y  propiciar un buen diseño, vamos a valernos de: 
+• las dependencias funcionales del esquema • las claves candidatas 
+• la definición de BCNF 
+• la descomposición o particionamiento del  esquema
+Bibliografía de la clase
+Bibliografía 
+• Date, C. J. (2019). Database design and relational theory: normal forms and all that jazz. Apress. • Garcia-Molina, H. (2008). Database systems: the complete book. Pearson Education India. 
+• Ullman, J. D. (1988). Principles of database and knowledge-base systems. 
+• Albarak, M., Bahsoon, R., Ozkaya, I., & Nord, R. L. (2020). Managing Technical Debt in Database Normalization. IEEE  Transactions on Software Engineering. 
+• Jadhav, R., Dhabe, P., Gandewar, S., Mirani, P., & Chugwani, R. (2020). A New Data Structure for Representation of Relational Databases for Application in the Normalization Process. In Machine Learning and Information Processing (pp.  305-316). Springer, Singapore. 
+• Ghawi, R. (2019, May). Interactive Decomposition of Relational Database Schemes Using Recommendations. In  International Conference: Beyond Databases, Architectures and Structures (pp. 97-108). Springer, Cham. • Stefanidis, C., & Koloniari, G. (2016, November). An interactive tool for teaching and learning database normalization. In  Proceedings of the 20th Pan-Hellenic Conference on Informatics (pp. 1-4). 
+• Knowledge Base of Relational and NoSQL Database Management Systems https://db-engines.com/en/ranking_trend • Akhtar, A. (2023). Popularity Ranking of Database Management Systems. arXiv preprint arXiv:2301.00847. 
+Importante!
+Los slides usados en las clases teóricas de esta materia, no  
+son material de estudio por sí solos en ningun caso. 

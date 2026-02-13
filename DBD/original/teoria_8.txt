@@ -1,0 +1,345 @@
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+
+
+
+
+
+
+Hoy veremos Datos Abiertos 
+1.Definiciones 
+2.Metadatos 
+3.Principios 
+4.Niveles de apertura 
+5.Beneficios 
+6.Licencias de Datos Abiertos 
+7.Tecnologías para Datos Abiertos 
+8.Portales de Datos Abiertos 
+9.Marco Normativo 
+10.Dataset 
+11.Wikidata
+Un dato es un elemento  
+descontextualizado que puede  dar origen a la generación de  información. Son símbolos que  describen hechos, condiciones,  valores o situaciones. Un dato  puede ser una letra, un número o  cualquier símbolo que  
+representa una cantidad, una  medida, una palabra o una  descripción. 
+La información es un dato  procesado con valor agregado,  dotado de relevancia, utilidad e  interpretación.
+Un dato público es cualquier dato  generado en el ámbito  
+gubernamental, o que se  
+encuentra bajo su guarda 
+Los datos abiertos son aquellos  de origen público o no a los que  cualquier persona puede  
+acceder, usar y compartir  libremente. Sólo deben atribuirse  y compartirse con la misma  licencia con la que fueron  publicados. 
+No son datos abiertos: 
+Archivos de datos generados en  formatos no susceptibles de ser reutilizados por un sistema  
+informático (imágenes de texto, PDFs o documentos bloqueados por algún  sistema de protección).  
+Datos estadísticos, agregados o  resumidos.  
+Memorias e informes de gestión  anuales. 
+Textos legislativos, ordenanzas,  reglamentos, normativas 
+Individuales.
+
+Ciertas características o atributos de los  datos son definidos para facilitar su  comprensión. Se las conocen como  "metadatos".  
+Suele decirse, por esa razón, que "los  metadatos son datos sobre los datos".  
+Los metadatos pueden describir cómo  un dato es representado, cuáles son los  rangos de valores aceptables, su relación  con otros datos y cómo estos deben ser  etiquetados. También pueden proporcionar  otra información pertinente, como el  administrador responsable, leyes y  reglamentos asociados, y la política de  gestión de acceso.
+
+
+Un dato que no puede  reutilizarse por falta de  información,  
+no está realmente abierto
+
+Existe lenguajes estándar para  los metadatos, que se basan en  estándares ISO para garantizar la  interoperabilidad y una amplia  reutilización: 
+Dublin Core 
+el vocabulario de catálogo de  datos de la W3C (DCAT)  
+la infraestructura para  
+información espacial  
+(INSPIRE) de la UE.
+La infraestructura para  
+información espacial (INSPIRE)  de la UE se basa en la ISO – 19115, cuya última versión data  de 2014. 
+Dublin Core se publicó en 2009  como estándar ISO – 15836 y es  uno de los estándares de  
+metadatos más conocidos y  usados. DCAT es un vocabulario RDF  diseñado para facilitar la  
+interoperabilidad entre  
+catálogos de datos publicados en  la Web . Se describe en clases y  propiedades.
+
+Es una colaboración entre más de 170  gobiernos y organizaciones que  trabajan para abrir los datos  
+basándose en un conjunto de  principios compartidos. 
+Promueven políticas y prácticas que  permiten a los gobiernos y a las  organizaciones de la sociedad civil  recopilar, compartir y utilizar datos  bien gobernados, para responder de  manera efectiva y responsable a las  siguientes áreas de trabajo:  
+anticorrupción, acción climática,  género, inteligencia artificial y  derechos de datos.
+Abiertos por defecto 
+Oportunos y exhaustivos Accesibles y utilizables Comparables e interoperables 
+Para mejorar la gobernanza y  participación ciudadana. 
+Para el desarrollo inclusivo y la  innovación.
+La iniciativa Open Government Data,  definió 8 características que deben  cumplir los datos “públicos” para ser  “abiertos” 
+Completos 
+Primarios 
+Oportunos 
+Accesibles 
+Procesables 
+No discriminatorios 
+No propietarios 
+Licencia de uso libre
+
+
+
+Están disponibles y no tienen  restricciones para su apertura
+
+
+Son recolectados en la fuente de  origen, con el nivel de especificidad  más alto posible, no en forma  agregada ni modificada
+
+
+Están disponibles tan rápido como  sea necesario para preservar su valor
+
+
+Están disponibles para el rango más  amplio de usuarios y propósitos
+
+
+Están estructurados de forma tal que  permitan un procesamiento  automático
+
+
+Están disponibles para cualquier  ciudadano, sin requerir un registro
+
+
+Están disponibles en un formato  sobre el cual ninguna empresa de software tiene un control exclusivo
+
+Los datos abiertos deben tener una  licencia que especifique que se trata  de datos abiertos y que defina bajo  qué condiciones estos datos pueden  ser reutilizados.  
+La licencia podría, además, detallar  que las personas que usen los datos  deben atribuirlos y que, en caso de  que combinen los datos con otros  datos, deben compartir esta  información también como datos  abiertos.
+
+
+
+Primer nivel: formato de publicación de  
+datos que no permite ser reutilizado. 
+Segundo nivel: se permite operar sobre  
+los datos para agregar valor. Software  
+propietario.
+
+Tercer nivel: publicación de datos en  
+formatos estructurados. Software libre.  
+Es el estadio mínimo de apertura de  
+datos. 
+
+Cuarto y Quinto nivel: estándares de  
+mayor calidad y homogeneidad en  
+publicaciones.
+
+
+
+
+
+
+Mejorar el proceso de toma de  
+decisiones basadas en evidencia  empírica e interoperabilidad. 
+Combatir la corrupción y fakenews. 
+Posibilitar el monitoreo, transparencia y  la rendición de cuentas ciudadana. 
+Crear y optimizar servicios, aplicaciones  y proyectos de gran valor. 
+Innovar, buscar soluciones y productos.
+¿Quiénes se benefician o aprovechan  de los datos abiertos?: 
+Organizaciones de la sociedad  civil. 
+Sector Privado 
+Sector académico 
+Ciudadanía 
+Periodismo 
+Sector Público
+
+
+
+Los datos abiertos necesitan  estar abiertos tanto técnica como legalmente. Para hacerlo,  tenemos que aplicarles una licencia. 
+Las licencias permiten que las  personas sepan, sin  
+ambigüedades, los usos a los que  se pueden someter los datos en  caso de reutilización y las  condiciones que deberán 
+tener en cuenta en materia de  propiedad intelectual. 
+
+
+
+Open Data Commons Public Domain Dedication and License o  PDDL 
+Open Data Commons Attribution License 
+Open Data Commons Open  Database License (ODbL) 
+Creative Commons Atribución 4.0 Internacional
+
+Open Data Commons Public Domain 
+Dedication and  
+License o PDDL
+Permite difundir, reutilizar o adaptar  los datos sin restricción alguna. 
+
+Exige la referencia a la autoría o  
+fuente de los datos para la  
+reutilización de la información. 
+Open Data Commons  
+Attribution License
+Permite la reutilización de los  
+datos siempre que se reconozca  
+la autoría de la información  
+original y se mantenga la misma  
+licencia en las obras derivadas,  
+de las cuales se puede restringir  
+su uso si, además, se distribuye  
+una versión sin dichas  
+Open Data Commons restricciones. 
+Open Database  
+License (ODbL)
+
+
+Creative Commons Atribución 
+4.0 Internacional
+Esta licencia posibilita no sólo  copiar y redistribuir el material  en cualquier medio o formato,  sino también adaptar y  
+transformarlo para cualquier  propósito, incluso comercial. 
+Condiciones: 
+Atribución 
+No comercial 
+Sin obras derivadas 
+Compartir igual. 
+
+
+Creative Commons Atribución 
+4.0 Internacional
+
+Creative Commons Atribución 
+4.0 Internacional
+
+
+
+
+
+Es una lista de conjuntos de  datos disponibles en una  iniciativa de datos abiertos. Los  elementos esenciales son:  metadatos con información clara  en cuanto a la licencia legal de  uso y el acceso a las bases de  datos propiamente dichas.
+
+Constituye “una puerta de  acceso” en línea para que los  usuarios tengan disponibles  todos los recursos de una  iniciativa de datos abiertos.  Incluye al catálogo de datos,  otros servicios que forman parte  del ecosistema de datos abiertos  (IDE, APIs, etc) y un buscador que  permite interactuar con ellos. 
+
+
+
+¿Por qué armar un portal de  
+datos abiertos?.
+
+¿Por qué armar un portal de  
+datos abiertos?. 
+Portal de  
+datos  
+abiertos
+
+
+
+https://datos.gob.ar.
+
+
+
+
+https://data.gov/.
+
+
+
+
+https://data.europa.eu/en.
+
+
+
+
+https://data.europa.eu/en.
+
+
+
+
+
+
+
+Estos son los decretos y resoluciones  que enmarcan la política de apertura  de datos de la Administración Pública  Nacional. 
+Plan Nacional de Apertura de  Datos: El decreto 117/2016  
+reglamenta plazos tanto para la  publicación de los primeros  
+conjuntos de datos de nuestro portal.  También reglamenta los tiempos para  detallar los activos de datos de los  distintos organismos de la Nación y  su cronograma de publicación. 
+Régimen de Acceso a la  
+Información Pública: Ley 27275 de  Derecho de Acceso a la Información  Pública.
+Protección de seguridad, privacidad y  propiedad. 
+Artículo 43 Habeas Data de la  Constitución Nacional. 
+Ley 25326 Protección de datos  personales. 
+Ley11723 Propiedad Intelectual 
+Ley 27275 Acceso a la  
+información pública. 
+Ley 17622. Secreto Estadístico Ley 11.683. Procedimiento Fiscal
+
+
+
+2003 - Directiva 2003/98/CE relativa a la  reutilización de la información del sector  público. 
+2011 - La Decisión de la Comisión 
+2011/833/UE sobre la reutilización de los  documentos de la Comisión estableció las  bases para el antiguo Portal de Datos  Abiertos de la UE, gestionado por la Oficina  de Publicaciones de la UE (2012-2021). 
+2013 – Directiva 2013/37/UE por la que  se modifica la Directiva 2003/98/CE relativa  a la reutilización de la información del  sector público.
+2019 - Directiva 2019/1024 sobre datos  abiertos y reutilización de la información del  sector público refunda las Directivas  2003/98/CE (Directiva ISP) y 2013/37/UE  por las que se establece un marco jurídico  de requisitos mínimos para los Estados  miembros en materia de accesibilidad de los  recursos de datos públicos. 
+2020 - Comunicación (COM/2020/66)  sobre una estrategia europea de datos  destinada a crear un mercado único de  datos en beneficio de las empresas, los  investigadores y las administraciones  públicas para garantizar la competitividad  global de Europa
+2022 - La ley de Gobernanza de Datos  
+establece un marco para fomentar el  
+intercambio voluntario de datos más allá de  
+los datos abiertos. 
+2023 - Entrada en vigencia de la  
+regulación de implementación de la  
+Comisión sobre conjuntos de datos de alto  
+valor, aquellos que tienen un alto potencial  
+de impacto económico y social.
+
+
+
+
+
+
+
+
+
+¿Qué tipos de datos y en qué  
+formato se producen en la Unión  
+Europea?.
+
+
+
+¿Cómo compatibilizamos los  
+datos?.
+
+
+
+
+¿Cómo se utilizan los datos?
+
+
+
+
+2009 – Memorandum presidencial sobre  transparencia y Gobierno Abierto. 
+2009 – Directiva de Gobierno Abierto. 2013 – Orden ejecutiva: por defecto la  información gubernamental debe ser  abierta y legible por máquinas. 
+2013 – Política de datos abiertos. 
+2016 – El senado aprueba el acta de  datos abiertos del gobierno.
+2018 - Ambas Cámaras del Congreso  
+aprueban la incorporación del acta de datos  
+abiertos del gobierno al acta de  
+fundamentos para la formulación de  
+políticas basadas en evidencias. 
+2019 – El acta de datos abiertos del  
+gobierno se convierte en ley.
+
+
+
+
+
+Tiene como objetivo principal nuclear  los distintos mecanismos referidos al  diseño, planificación, ejecución y  monitoreo de la estrategia nacional de  apertura de datos del Sector Público  Nacional y a todos aquellos actores  involucrados en su implementación;  como así también generar espacios de  diálogo entre éstos, la sociedad civil y el  sector académico. 
+La implementación, administración y  supervisión del programa estará en la  órbita de la Dirección Nacional de  Gobierno Abierto, siendo la Dirección  de Datos Abiertos la autoridad de  aplicación y alcanzando a todo el Sector  Público Nacional.
+
+Actualmente en la comunidad de datos  abiertos se esta discutiendo el  reemplazo del actual estándar en que se  comparten los datos de forma  
+estructurada el CSV por formatos que  permitan compartir datos en crudo,  como ser imágenes, audios, videos, etc. 
+Uno de las alternativas que estaría  teniendo buena aceptación es la  apificación.
+
+Veamos un dataset de  
+https://datos.gob.ar/dataset
+
+Veamos un dataset de  
+https://datos.gob.ar/dataset
+
+
+Veamos un dataset de  
+https://datos.gob.ar/dataset
+Veamos un dataset de  
+https://datos.gob.ar/dataset
+Veamos un dataset de  
+https://datos.gob.ar/dataset
+
+Es una base de conocimiento  
+secundaria, libre, colaborativa,  multilingüe y abierta que cualquiera  puede leer y editar. 
+Actúa como un repositorio para de  datos estructurados que es utilizado en  los proyectos de Wikimedia, como  puede ser wikipedia, aunque también  puede brinda soporte a otros sitios. 
+Su contenido esta disponible bajo una  licencia libre.
+Los datos en Wikidata están publicados  bajo la licencia Creative Commons Dedicación al Dominio Público 1.0, lo  que permite la reutilización de los datos  en muchos escenarios diferentes.  
+Puede copiar, modificar, distribuir y  presentar los datos, incluso con fines  comerciales, sin necesidad de pedir  permiso.
+Los datos son introducidos y  
+mantenidos por los editores de  
+Wikidata, quienes deciden las reglas de  
+creación y gestión de contenidos. 
+Los bots automatizados también  
+ingresan datos en Wikidata.
+

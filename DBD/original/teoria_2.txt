@@ -1,0 +1,473 @@
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+
+
+
+
+
+Uno de los principales principios en el diseño 
+de bases de datos es la NORMALIZACION 
+Organiza los datos siguiendo reglas 
+Minimiza redundancia 
+Reduce anomalías 
+Puede mejorar la mantenibilidad y  
+según el caso, la performance 
+Albarak, M., Bahsoon, R., Ozkaya, I., & Nord, R. L. (2020). Managing 
+Technical Debt in Database Normalization. IEEE Transactions on 
+Software Engineering.
+Un mal diseño puede implicar la necesidad de REFACTORIZAR la base de datos 
+Requiere de mucho tiempo y expertise 
+Deuda técnica
+Albarak, M., Bahsoon, R., Ozkaya, I., & Nord, R. L. (2020). Managing Technical Debt in Database Normalization. IEEE Transactions on Software Engineering. 
+
+
+Jadhav, R., Dhabe, P., Gandewar, S., Mirani, P., & Chugwani, R. (2020). A  New Data Structure for Representation of Relational Databases for Application in the Normalization Process. In Machine Learning and  Information Processing (pp. 305-316). Springer, Singapore.
+El diseño de un esquema de bases de datos es uno de los factores más importantes de los que depende el éxito de la base de datos relacional 
+
+La NORMALIZACION es un paso clave en el diseño de una base de datos 
+Toma una relación grande como entrada y la descompone en relaciones más pequeñas las cuales están libres de redundancia de datos y otras anomalías como la de inserción/eliminación 
+La descomposición se realiza siguiendo reglas/pasos Puede ser manual o automática
+Jadhav, R., Dhabe, P., Gandewar, S., Mirani, P., & Chugwani, R. (2020). A  New Data Structure for Representation of Relational Databases for Application in the Normalization Process. In Machine Learning and  Information Processing (pp. 305-316). Springer, Singapore. 
+Normalización se aplica a las bases de datos relacionales 
+El modelo relacional, sigue siendo 
+el modelo dominante en la 
+industria 
+Albarak, M., Bahsoon, R., Ozkaya, I., & Nord, R. L. (2020). Managing 
+Technical Debt in Database Normalization. IEEE Transactions on 
+Software Engineering.
+
+https://db-engines.com/en/ranking_categories
+
+https://db-engines.com/en/ranking/relational+dbms/all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conceptos Generales: 
+▪Anomalía 
+▪Dependencia Funcional 
+▪Dependencia Funcional Trivial 
+▪Clave 
+▪Clave Candidata 
+▪Super Clave
+
+
+Normalización: 
+Toma una relación grande como entrada y la descompone en relaciones más pequeñas las cuales están libres de redundancia de datos y otras anomalías como la de inserción/eliminación
+Normalización: 
+Toma una relación grande como entrada y la descompone en relaciones más pequeñas las cuales están libres de redundancia de datos y otras anomalías como la de inserción/eliminación
+Problema que surge a raíz del  
+diseño de una relación 
+PERSONAEMPLEADA(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+• El código de jefe es único en el sistema. 
+• Una persona puede trabajar en más de un departamento y en cada uno de ellos posee un código de empleado. 
+• El código de empleado no se repite ni por departamento, ni entre departamentos. 
+• FIngDepto es la fecha de ingreso a un departamento
+PERSONAEMPLEADA(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+dni 
+dni1 
+nombre 
+Juan 
+domicilio 
+12 Nro 222 
+depto 
+Compras 
+fIngDepto 
+2016-01-11 
+codEmpDepto E1 
+jefe 
+J1
+dni1 
+Juan 
+12 Nro 222 
+Liq. Sueldos 
+2015-02-01 
+E2 
+J2
+dni2 
+Maria 
+3 Nro. 214 
+Compras 
+2014-05-01 
+E3 
+J1
+dni3 
+José 
+3 Nro. 214 
+Compras 
+2015-01-08 
+E4 
+J1
+
+
+
+• El código de jefe es único en el sistema. 
+• Una persona puede trabajar en más de un departamento y en cada uno de ellos posee un código de empleado. 
+• El código de empleado no se repite ni por departamento, ni entre departamentos. 
+• FIngDepto es la fecha de ingreso a un departamento
+PERSONAEMPLEADA(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+dni 
+dni1 
+nombre 
+Juan 
+domicilio 
+12 Nro 222 
+depto 
+Compras 
+fIngDepto 
+2016-01-11 
+codEmpDepto E1 
+jefe 
+J1
+dni1 
+Juan 
+12 Nro 222 
+Liq. Sueldos 
+2015-02-01 
+E2 
+J2
+dni2 
+Maria 
+3 Nro. 214 
+Compras 
+2014-05-01 
+E3 
+J1
+dni3 
+José 
+3 Nro. 214 
+Compras 
+2015-01-08 
+E4 
+J1
+
+
+
+• El código de jefe es único en el sistema. 
+• Una persona puede trabajar en más de un departamento y en cada uno de ellos posee un código de empleado. 
+• El código de empleado no se repite ni por departamento, ni entre departamentos. 
+• FIngDepto es la fecha de ingreso a un departamento
+
+
+
+dni 
+dni1 
+nombre 
+Juan 
+domicilio 
+12 Nro 222 
+depto 
+Compras 
+fIngDepto 
+2016-01-11 
+codEmpDepto 
+E1 
+jefe 
+J1
+dni1 
+Juan 
+12 Nro 222 
+Liq. Sueldos 
+2015-02-01 
+E2 
+J2
+dni2 
+Maria 
+3 Nro. 214 
+Compras 
+2014-05-01 
+E3 
+J1
+dni3 
+José 
+3 Nro. 214 
+Compras 
+2015-01-08 
+E4 
+J1
+
+
+
+
+
+
+dni 
+dni1 
+nombre 
+Juan 
+domicilio 
+10 Nro 222 
+depto 
+Compras 
+fIngDepto 
+2016-01-11 
+codEmpDepto 
+E1 
+jefe 
+J1
+dni1 
+Juan 
+12 Nro 222 
+Liq. Sueldos 
+2015-02-01 
+E2 
+J2
+dni2 
+Maria 
+3 Nro. 214 
+Compras 
+2014-05-01 
+E3 
+J1
+dni3 
+José 
+3 Nro. 214 
+Compras 
+2015-01-08 
+E4 
+J1
+
+
+
+
+
+
+dni 
+dni1 
+nombre 
+Juan 
+domicilio 
+12 Nro 222 
+depto 
+Compras 
+fIngDepto 
+2016-01-11 
+codEmpDepto 
+E1 
+jefe 
+J1
+dni1 
+Juan 
+12 Nro 222 
+Liq. Sueldos 
+2015-02-01 
+E2 
+J2
+dni2 
+Maria 
+3 Nro. 214 
+Compras 
+2014-05-01 
+E3 
+J1
+dni3 
+José 
+3 Nro. 214 
+Compras 
+2015-01-08 
+E4 
+J1
+
+
+
+
+
+
+dni 
+dni1 
+nombre 
+Juan 
+domicilio 
+12 Nro 222 
+depto 
+Compras 
+fIngDepto 
+2016-01-11 
+codEmpDepto 
+E1 
+jefe 
+J1
+dni1 
+Juan 
+12 Nro 222 
+Liq. Sueldos 
+2015-02-01 
+E2 
+J2
+dni2 
+Maria 
+3 Nro. 214 
+Compras 
+2014-05-01 
+E3 
+J1
+dni3 
+José 
+3 Nro. 214 
+Compras 
+2015-01-08 
+E4 
+J1
+
+
+
+
+
+
+
+PERSONAEMPLEADA(dni, nombre, domicilio, depto, fIngDepto, codEmpDepto, jefe) 
+• El código de jefe es único en el sistema. 
+• Una persona puede trabajar en más de un departamento y en cada uno de ellos posee un código de empleado. 
+• El código de empleado no se repite ni por departamento, ni entre departamentos. 
+• FIngDepto es la fecha de ingreso a un departamento
+
+
+
+
+
+
+Dependencia Funcional (df) 
+• Si dos tuplas (t1 y t2) de una relación R , coinciden en todos los atributos  A1, A2,…,An; entonces DEBEN también coincidir en los atributos B1,  B2,..,Bm. Para toda tupla de R. 
+–Esto se escribe 
+A1, A2,…,An -> B1, B2,..,Bm 
+–Y se lee 
+A1, A2,…,An “determina funcionalmente a” B1, B2,..,Bm
+Dependencia Funcional (df) 
+• Si dos tuplas (t1 y t2) de una relación R , coinciden en todos los atributos  A1, A2,…,An; entonces DEBEN también coincidir en los atributos B1,  B2,..,Bm. Para toda tupla de R. 
+–Esto se escribe 
+A1, A2,…,An -> B1, B2,..,Bm 
+–Y se lee 
+A1, A2,…,An “determina funcionalmente a” B1, B2,..,Bm
+Dependencia Funcional (df) 
+Dicho de otra manera:  
+•Una dependencia funcional de la forma X -> Y se cumple en R si: – Para todos los pares de tuplas t1 y t2 de la relación, cuando se  cumple que t1[x]=t2[x],  
+–entonces se cumple t1[y]=t2[y].
+Dependencia Funcional (df) 
+Ejemplo 1: 
+–Dada la relación 
+PERSONA(dni, nombre, edad, fechaNacimiento)
+Dependencia Funcional (df) 
+Ejemplo 1: 
+–Dada la relación 
+PERSONA(dni, nombre, edad, fechaNacimiento) 
+–Y valga en PERSONA la  
+df: dni->nombre,edad,fechaNac
+Dependencia Funcional (df) 
+Ejemplo 1: 
+–Dada la relación 
+PERSONA(dni, nombre, edad, fechaNacimiento) 
+–Y valga en PERSONA la  
+df: dni->nombre,edad,fechaNac 
+La df enunciada, indica que, si dos tuplas t1 y t2 de la relación PERSONA  tienen el mismo valor en el atributo dni, deben necesariamente tener los  mismos valores en los atributos nombre, edad y fechaNac
+Dependencia Funcional (df) 
+Ejemplo 2: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNac, nroLegajo) Donde 
+•Una persona posee un único número de legajo asignado 
+•Un número de legajo pertenece a una sola persona
+Dependencia Funcional (df) 
+Ejemplo 2: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNac, nroLegajo) Donde 
+•Una persona posee un único número de legajo asignado 
+•Un número de legajo pertenece a una sola persona 
+–Se pueden enunciar las siguientes dfs
+Dependencia Funcional (df) 
+Ejemplo 2: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNac, nroLegajo) Donde 
+•Una persona posee un único número de legajo asignado 
+•Un número de legajo pertenece a una sola persona 
+–Se pueden enunciar las siguientes dfs 
+df1) dni -> nombre, edad, fechaNac, nroLegajo 
+df2) nroLegajo -> nombre, edad, fechaNac, dni
+• Dependencia Funcional (df) 
+Ejemplo 3: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNac, nroLegajo, carrera) »Donde 
+• Una persona puede cursar diversas carreras 
+• Nombre indica como se llama la persona 
+• Una persona posee un único número de legajo asignado para cada carrera que  cursa 
+• Un número de legajo pertenece a una sola persona de una carrera
+• Dependencia Funcional (df) 
+Ejemplo 3: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNac, nroLegajo, carrera) »Donde 
+• Una persona puede cursar diversas carreras 
+• Nombre indica como se llama la persona 
+• Una persona posee un único número de legajo asignado para cada carrera que  cursa 
+• Un número de legajo pertenece a una sola persona de una carrera 
+–Se pueden enunciar las siguientes dfs
+• Dependencia Funcional (df) 
+Ejemplo 3: 
+–Dada la relación: PERSONA(dni, nombre, edad, fechaNac, nroLegajo, carrera) »Donde 
+• Una persona puede cursar diversas carreras 
+• Nombre indica como se llama la persona 
+• Una persona posee un único número de legajo asignado para cada carrera que cursa • Un número de legajo pertenece a una sola persona de una carrera 
+–Se pueden enunciar las siguientes dfs 
+df1) dni -> nombre, edad, fechaNac 
+df2) nroLegajo, carrera -> dni 
+df3) dni, carrera -> nroLegajo
+
+
+
+
+
+
+
+Dependencia Funcional trivial  
+Es una df de la forma: 
+A1, A2,…,An -> B1, B2,..,Bm 
+Tal que: 
+{B1, B2,..,Bm} ⊆ {A1, A2,…,An }
+Dependencia Funcional trivial 
+Ejemplo: 
+–Dada la relación:  
+CONTRATADO(nroContradado, dni, nombrePersona, inicioActividad) 
+Donde valen las siguientes dependencias funcionales: 
+• df1) dni -> nombrePersona 
+• df2) nroContratado, dni -> inicioActividad
+Dependencia Funcional trivial 
+Ejemplo: 
+–Dada la relación:  
+CONTRATADO(nroContradado, dni, nombrePersona, inicioActividad) 
+Donde valen las siguientes dependencias funcionales: 
+• df1) dni -> nombrePersona 
+• df2) nroContratado, dni -> inicioActividad 
+Algunas dependencias funcionales triviales válidas en CONTRATADO son:
+Dependencia Funcional trivial 
+Ejemplo: 
+–Dada la relación:  
+CONTRATADO(nroContradado, dni, nombrePersona, inicioActividad) 
+Donde valen las siguientes dependencias funcionales: 
+• df1) dni -> nombrePersona 
+• df2) nroContratado, dni -> inicioActividad 
+Algunas dependencias funcionales triviales válidas en CONTRATADO son: dft1) dni-> dni
+Dependencia Funcional trivial 
+Ejemplo: 
+–Dada la relación:  
+CONTRATADO(nroContradado, dni, nombrePersona, inicioActividad) 
+Donde valen las siguientes dependencias funcionales: 
+• df1) dni -> nombrePersona 
+• df2) nroContratado, dni -> inicioActividad 
+Algunas dependencias funcionales triviales válidas en CONTRATADO son: 
+dft1) dni-> dni 
+dft2) nroContratado, dni -> nroContratado
+
+
+• Date, C. J. (2019). Database design and relational theory: normal forms and all that jazz. Apress. • Garcia-Molina, H. (2008). Database systems: the complete book. Pearson Education India. 
+• Ullman, J. D. (1988). Principles of database and knowledge-base systems. 
+• Albarak, M., Bahsoon, R., Ozkaya, I., & Nord, R. L. (2020). Managing Technical Debt in Database Normalization. IEEE  Transactions on Software Engineering. 
+• Jadhav, R., Dhabe, P., Gandewar, S., Mirani, P., & Chugwani, R. (2020). A New Data Structure for Representation of Relational Databases for Application in the Normalization Process. In Machine Learning and Information Processing (pp.  305-316). Springer, Singapore. 
+• Ghawi, R. (2019, May). Interactive Decomposition of Relational Database Schemes Using Recommendations. In  International Conference: Beyond Databases, Architectures and Structures (pp. 97-108). Springer, Cham. • Stefanidis, C., & Koloniari, G. (2016, November). An interactive tool for teaching and learning database normalization. In  Proceedings of the 20th Pan-Hellenic Conference on Informatics (pp. 1-4). 
+• Knowledge Base of Relational and NoSQL Database Management Systems https://db-engines.com/en/ranking_trend • Akhtar, A. (2023). Popularity Ranking of Database Management Systems. arXiv preprint arXiv:2301.00847. 
+Importante!
+Los slides usados en las clases teóricas de esta materia, no  son material de estudio por sí solos en ningun caso. 

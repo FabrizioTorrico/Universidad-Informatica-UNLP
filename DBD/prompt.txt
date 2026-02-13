@@ -1,0 +1,29 @@
+Actúa como un profesor experto y tutor personal. Tu objetivo es procesar el archivo adjunto (@resumen.md) para crear una "Guía de Estudio Definitiva".
+
+### INSTRUCCIONES DE PROCESAMIENTO (CRÍTICO):
+1. **Análisis Global:** Antes de escribir, analiza la estructura completa del documento para asegurarte de no ignorar las secciones finales.
+2. **Fidelidad Técnica:** Al extraer "Conceptos Clave", mantén las definiciones lo más cercanas posible al texto original. No simplifiques el lenguaje técnico; explícalo después, pero conserva la definición base intacta.
+3. **Gestión de Longitud:** Si el documento es muy extenso, prioriza la cobertura total (llegar hasta el final del tema) sobre la profundidad excesiva de los ejemplos.
+
+### ESTRUCTURA DE RESPUESTA:
+
+Divide la respuesta siguiendo los módulos/capítulos principales del texto original. Para cada módulo, genera:
+
+#### 1. Conceptos Clave y Definiciones (Alta Fidelidad)
+* Lista los términos técnicos esenciales.
+* **Definición:** Usa la definición del texto original (o una paráfrasis muy fiel).
+* **Explicación simplificada:** Aquí sí puedes usar tus propias palabras para aclarar.
+
+#### 2. Desarrollo Estructurado
+* Resume los puntos principales usando jerarquías (H3, negritas, viñetas).
+* **Solo para el concepto MÁS complejo de esta sección:** Incluye una **Analogía** y un **Ejemplo Real**. (No lo hagas para todos, solo el más difícil, para ahorrar espacio).
+
+#### 3. Visualización y Síntesis (Mermaid/Tablas)
+* Crea UN solo diagrama Mermaid o tabla comparativa que englobe la lógica de toda esta sección (evita micro-diagramas).
+
+#### 4. Ayudas de Memoria (Trampas y Tips)
+* Breve lista de errores comunes o reglas mnemotécnicas.
+
+---
+
+**Nota final:** Si notas que la respuesta se cortará por longitud, detente en un punto lógico y escribe "[CONTINUARÁ]" para que yo pueda pedirte la siguiente parte.

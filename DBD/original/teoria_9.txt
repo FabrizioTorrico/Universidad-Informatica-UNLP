@@ -1,0 +1,218 @@
+
+
+Alejandra Lliteras Prof. Titular
+Federico Orlando Prof. Adjunto 
+
+
+
+
+
+
+
+Hoy veremos Visualización de Datos 
+1.Definiciones 
+2.Tipos de gráficos 
+3.Preparación de datos 
+4.Herramientas 
+5.Tableau 
+6.Empecemos a explorar
+La visualización de datos es la  representación gráfica de  información y datos. Al utilizar  elementos visuales como  cuadros, gráficos, infografías o  mapas, las herramientas de  visualización de datos  
+proporcionan una manera  accesible de ver y fácil de  comprender tendencias, valores  atípicos y patrones en los datos. 
+En el mundo actual, las  
+herramientas y tecnologías de  visualización de datos son  esenciales para analizar grandes  cantidades de información y  tomar decisiones basadas en los  datos.
+Compartir información  
+fácilmente. 
+Exploración de oportunidades de  forma interactiva.
+Fácil reconocimiento de patrones  y relaciones. 
+
+
+Información sesgada o inexacta. 
+La correlación no siempre  significa causalidad.
+Los mensajes centrales pueden  perderse en la traducción. 
+
+
+Ayuda a las personas a ver,  interactuar y comprender mejor  los datos. Ya sea simple o  compleja, la visualización  adecuada puede hacer que todos  estén en el mismo nivel,  
+independientemente de su  experiencia. 
+Es difícil pensar una organización  que no se beneficie del uso y  comprensión de los datos. ,  desde áreas de gobierno como  sectores de empresas privadas  como marketing, finanzas,  servicios, educación, etc.
+
+Cuanto mejor pueda transmitir  sus puntos visualmente, ya sea  en un dashboard o en una  presentación de diapositivas,  mejor podrá aprovechar esa  información. 
+Las habilidades están cambiando  para adaptarse a un mundo  basado en datos. Es cada vez más  valioso para los profesionales  poder utilizar datos para tomar  decisiones y utilizar elementos  visuales para contar historias  cuándo los datos informan quién,  qué, cuándo, dónde y cómo.
+
+Los gráficos clásicos son: Tabla Barras Línea 
+Circular/Torta 
+Dispersión 
+Burbujas 
+Treemap 
+Nube de palabras 
+Infografía 
+Mapas
+Sirven para mostrar números,  totales, etc. Es lo más similar a  una hoja de Excel.  
+Se centran en valores  
+individuales en lugar de utilizar  estilos visuales. Son una de las  formas más comunes de mostrar  datos y, por lo tanto, una de las  formas más importantes en que  las personas analizan los datos. 
+Si se utilizan recursos como  celdas en escala de colores de  acuerdo a su valor, es posible  generar un mapa de calor.
+
+
+
+
+
+
+
+
+Una tabla organiza los datos por  eje. Las filas son el eje x y las  columnas son el eje y. 
+La convención utiliza el eje x para  mostrar las categorías y el eje y  para mostrar los valores dentro  de cada medida. Las columnas  están etiquetadas para indicar  claramente su significado. 
+A diferencia de la mayoría de los  gráficos, las tablas pueden  mostrar datos cualitativos de  forma organizada y resaltar las  relaciones entre ellos.
+Los gráficos de barras o columna  nos permiten comparar valores  numéricos como números  enteros y porcentajes. Usan la  longitud de cada barra para  representar el valor de cada  
+variable. Por ejemplo, los gráficos de  barras muestran variaciones en  categorías o subcategorías  escalando el ancho o alto a  través de barras o rectángulos  simples y espaciados. 
+Los gráficos de barras también  pueden mostrar medidas durante  un período de tiempo específico  (discreto).
+
+
+
+
+Un gráfico de línea muestra las  relaciones de los cambios en los  datos en un período de tiempo,  facilitando la identificación de  tendencias. 
+Se pueden utilizar múltiples  líneas para comparar distintas  categorías de una dimensión.
+
+
+
+Es una visualización común, pero  limitada, que se utiliza para  mostrar cómo unas pocas  variables se comparan en  porcentaje entre ellas y con el  total. 
+En un buen gráfico de torta, las  variables deben ser entre 2 y 5.  Además, una de las variables  debe ser considerablemente más  grande que el resto en cuanto a  porcentaje del total.
+
+
+
+
+No usar gráfico circular cuando: Hay demasiadas categorías. 
+Existen porcentajes/números  similares entre diferentes  valores dentro de la  
+dimensión elegida. 
+Los datos no representan un  “todo” uniforme o los  
+porcentajes no llegan al 100  por ciento. 
+Hay valores negativos o  
+fracciones complejas en el  valor de su medida.
+Son útiles para mostrar la  correlación entre 2 variables. 
+Este tipo de gráfico utiliza  valores numéricos para ambos  ejes en lugar de utilizar  
+categorías en alguno de los ejes  como en los gráficos anteriores. 
+El gráfico muestra un punto  donde las 2 variables se  
+intersectan. Se usan  
+coordenadas cartesianas para  visualizar los datos.
+
+
+
+
+
+Es una variación de un gráfico de  dispersión en el que los puntos  de datos se reemplazan por  burbujas y el tamaño de las  burbujas representa una  
+dimensión adicional de los datos. Puede resultar útil para mostrar  comparaciones de alto nivel  entre miembros de un campo. 
+
+
+
+
+
+Puede resultar difícil hacer  comparaciones visuales cuando  las burbujas tienen un tamaño  similar o no están colocadas al  lado de la categoría o miembro  en cuestión.  
+En cambio, los gráficos de  burbujas son eficaces para  brindarnos orientación  
+direccional con respecto a  nuestros datos y cómo se  comparan los miembros dentro  de un campo.
+Es un tipo de representación  gráfica de datos jerárquicos en  forma de rectángulos que  ocupan el total del espacio de  forma proporcional al valor de  una variable. 
+Son útiles para visualizar una  gran cantidad de categorías  relacionadas.
+Un buen treemap tendrá: 
+Valores numéricos distintos Una jerarquía distinta 
+No más de tres o cuatro hojas  etiquetadas. 
+Un claro nivel más alto de la  jerarquía. 
+No mostrar valores negativos
+Un mal treemap tendrá: 
+Parece abarrotado de  
+demasiadas categorías y  etiquetas. 
+Tener demasiados valores  similares.
+Son una herramienta que permite  agilizar el análisis de datos tipo  texto, puesto que a través de  ellas podemos identificar e  interpretar de manera rápida y  sencilla las palabras con mayor  
+relevancia en el texto analizado.
+Las infografías es una imagen  grande, más elaboradas y buenas  cuando se utiliza los datos para  compartir información, difundirla  y generar discusión. 
+Se combinan iconos, símbolos,  mapas y gráficos sencillos para  explicar los datos. El texto solo se  usa como etiquetas o para  describir brevemente hechos
+
+
+
+
+
+Una infografía es una manera simple,  pero poderosa de comunicarse y hay  muchas razones para usarla: 
+Atraer el interés del espectador 
+Detallar Información en un  
+espacio compacto 
+Transmitir datos rápidamente  usando imágenes 
+Dar información de manera  
+abreviada 
+Involucrar al espectador a  
+pensar sobre el tema, porque  debe explorar cada parte 
+Hacer que un problema complejo  sea fácil de entender
+Una visualización que muestra  datos en forma de mapa usando  diferentes formas y colores para  mostrar la relación entre datos y  ubicaciones específicas. 
+A su vez, es posible utilizar escala  de color o tamaño de puntos de  acuerdo al recuento de valores  para resaltar la información. 
+Las visualizaciones  
+geoespaciales resaltan la  conexión física entre puntos de  datos. Esto las hace susceptibles  a algunos errores comunes: 
+Escala: los cambios en el  
+tamaño del mapa pueden afectar  la forma en que el espectador  interpreta los datos. 
+Correlación automática: una  vista puede crear una asociación  entre puntos de datos que  aparecen cerca en un mapa,  incluso para datos no  
+relacionados.
+Hay 2 tipos de visualizaciones  geoespaciales: 
+Mapa de símbolos  
+proporcionales. 
+Mapas de área.
+Los símbolos ubicados en un  
+locación representan eventos de  
+interés. Las medidas son  
+representadas por formas  
+usando color y tamaño para  
+mostrar valores.
+
+Estos mapas de áreas  
+representan valores en  
+diferentes tonos de color en una  
+región geográfica.
+
+
+Tomemos como ejemplo los  
+dataset del censo 2022, en  
+particular los de la provincia de  Buenos Aires.  
+https://censo.gob.ar/index.php/dat os_definitivos_bsas/
+
+
+
+
+
+
+
+
+
+
+
+En el mercado existen diversas  herramientas para el análisis de  datos: 
+Tableau 
+Qlick 
+Power BI 
+Gephi
+
+
+
+
+
+
+
+Las dimensiones son datos  cualitativos, como un nombre o  una fecha.  
+De manera predeterminada,  Tableau clasifica automáticamente  como dimensiones aquellos datos  que contienen información  cualitativa o categórica, como por  ejemplo, cualquier campo con  texto o valores de fecha.  
+Estos campos suelen mostrarse  como encabezados de columnas  para filas de datos, como Nombre  de Cliente o Fecha de Orden,  además de definir el nivel de  granularidad que aparece en la  vista.
+Las medidas son datos numéricos  cuantitativos.  
+De manera predeterminada,  Tableau considera medidas  cualquier campo que contenga  este tipo de datos, como por  ejemplo, transacciones de ventas o  
+ganancias.  Los datos que se clasifican como  medidas se pueden agregar en  función de una dimensión dada,  como por ejemplo, ventas totales  (Medida) por región (Dimensión).
+
+
+Los campos continuos pueden  contener un número infinito de  valores. Puede tratarse de un rango  de valores, como las ventas dentro  de un determinado intervalo de  fechas o cantidades. Los campos  continuos aparecen de color verde  en Tableau. 
+Los campos discretos contienen un  número finito de valores, como  País, Provincia o Nombre de  cliente. Los campos discretos  aparecen de color azul en Tableau.
+
+
+
+
+
+
+
+
+
+
+
+
+
+• https://technokidsca.com/2021/07/29/que-es-una-infografia/ • https://es.wikipedia.org/wiki/Wikipedia:Portada 
+• https://www.tableau.com/visualization/what-is-data-visualization Importante!
+
+Los slides usados en las clases teóricas de esta materia, no son  material de estudio por sí solos en ningun caso. 
