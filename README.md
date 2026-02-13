@@ -6,7 +6,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/Estado-Activo-8ad7eb?style=for-the-badge&logo=github&logoColor=D9E0EE&labelColor=1E202B)
-![](https://img.shields.io/github/repo-size/TU_USUARIO/TU_REPO?color=86dbd7&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/repo-size/FabrizioTorrico/Universidad-Informatica-UNLP?color=86dbd7&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
 ![](https://img.shields.io/badge/Material-Resúmenes-86dbce?style=for-the-badge&logo=gitbook&logoColor=D9E0EE&labelColor=1E202B)
 <a href="LINK_A_TU_LINKEDIN_O_WEB"> <img alt="Autor" src="https://img.shields.io/badge/Autor-Fabrizio_Torrico-86dbc0?style=for-the-badge&logo=person&logoColor=D9E0EE&labelColor=1E202B"> </a>
 
@@ -50,10 +50,10 @@ Aquí está todo el contenido separado por asignaturas. Desplegá la lista para 
 </div>
 
 Software y herramientas online que recomiendo para cursar.
-| <div align="center">Calculadoras / Math</div> | <div align="center">Productividad</div> |
+| | |
 |:---:|:---:|
-| <a href="https://josu-dev.github.io/RobotScript/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/GeoGebra_icon_2017.svg/1024px-GeoGebra_icon_2017.svg.png" width="80"><br><b>Robotscript</b><br><sub>Graficadora indispensable</sub></a> | <a href="https://vonsim.github.io/"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/2023_Obsidian_logo.png" width="80"><br><b>Vonsim</b><br><sub>Toma de notas y cerebro digital</sub></a> |
-| <a href="https://www.overleaf.com/"><img src="https://images.ctfassets.net/nrgyaltdicpt/6k1w7Z5w4M1a4F2K2nQ9x/f8d9b8e9e8f7e9e8f7e9e8f7e9e8f7e9/Overleaf_Logo_Icon_Only.png" width="80"><br><b>Overleaf</b><br><sub>Editor LaTeX online</sub></a> | <a href="https://miro.com/"><img src="https://cdn.worldvectorlogo.com/logos/miro-2.svg" width="80"><br><b>Miro</b><br><sub>Pizarras colaborativas infinitas</sub></a> |
+| <a href="https://josu-dev.github.io/RobotScript/"><img src="./assets/robotscript.png" width="80"><br><b>Robotscript</b><br><sub>Version web de R-info</sub></a> | <a href="https://vonsim.github.io/"><img src="./assets/vonsim.png" width="80"><br><b>Vonsim</b><br><sub>Emulador de assembler</sub></a>
+| <a href="https://josu-dev.github.io/Depende-Quiz-Datos/"><img src="./assets/depende-quiz.png" width="140"><br><b>Depende Quiz</b><br><sub>Quiz para practicar materias</sub></a> |
 
 <div align="center">
     <h2>• Otros repositorios •</h2>
