@@ -38,9 +38,9 @@ Aquí está todo el contenido separado por asignaturas. Desplegá la lista para 
 <details>
   <summary><b>Año 3</b></summary>
 
-| Materia                      | Contenido            | Estado            |
-| :--------------------------- | :------------------- | :---------------- |
-| **Diseño de bases de datos** | [Ver carpeta](./DBD) | Teorias completas |
+| Materia                      | Contenido                | Estado            |
+| :--------------------------- | :----------------------- | :---------------- |
+| **Diseño de bases de datos** | [Ver carpeta](./3ro/dbd) | Teorias completas |
 
 </details>
 
