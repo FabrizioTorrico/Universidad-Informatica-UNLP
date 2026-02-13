@@ -30,6 +30,10 @@ Links rápidos a material externo, carpetas en la nube o herramientas específic
 
 - 📺 **[Playlist de YouTube](https://www.youtube.com/watch?v=33zJjdotvaE&list=PLgjP77yaDcE-t44Lfz5bGlSzHf63Od5uF&index=12)** > _Clases grabadas y tutoriales._
 
+- 📺 **[Drive de Franja](https://drive.google.com/drive/folders/1QUTqXdp1FDOJV730QIpSKeBxaRPCfNRH)** > Teoria, Finales, Practicas, PArciales
+
+- **[Quiz de Finales](https://josu-dev.github.io/Depende-Quiz-Datos/)** > _Quiz para practicar el final de dbd._
+
 <div align="center">
     <h2>• Contenido local •</h2>
     <h3></h3>
