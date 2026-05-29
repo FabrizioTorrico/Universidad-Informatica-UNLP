@@ -26,11 +26,13 @@ Links rápidos a material externo, carpetas en la nube o herramientas específic
 
 - 🧠 **[NotebookLM: Asistente para Finales](https://notebooklm.google.com/notebook/1e712582-1d96-47b0-b7c5-7aad04f81a77)** > _IA cargada con todo el contexto de la materia. Ideal para estudiar teoría._
 
-- 📓 **[Resumen de Teorias y practicas resueltas en Notion](http://inakilapeyre.notion.site/Dise-o-de-Bases-de-Datos-7e03b9601e0947efb1b0c37486aa04f4?pvs=74)** > _Cursada y apuntes para los parciales._
+- 📓 **[Resumen COMPLETO y practicas resueltas en Notion](https://spectacled-hero-6c5.notion.site/Dise-o-de-Base-de-Datos-35c029fae4e580c69e0ff0b9c229ed21)** > _Cursada y apuntes para los parciales._
+
+- 📺 **[Mapa Conceptual (Parcial)](/assets/mapa-conceptual.png)** > Mapa conceptual hecho en excalidraw, pueden completarlo a su gusto 😀 (no llegue a terminar lo ultimo)
 
 - 📺 **[Playlist de YouTube](https://www.youtube.com/watch?v=33zJjdotvaE&list=PLgjP77yaDcE-t44Lfz5bGlSzHf63Od5uF&index=12)** > _Clases grabadas y tutoriales._
 
-- 📺 **[Drive de Franja](https://drive.google.com/drive/folders/1QUTqXdp1FDOJV730QIpSKeBxaRPCfNRH)** > Teoria, Finales, Practicas, PArciales
+- 📺 **[Drive de Franja](https://drive.google.com/drive/folders/1QUTqXdp1FDOJV730QIpSKeBxaRPCfNRH)** > Teoria, Finales, Practicas, Parciales
 
 - **[Quiz de Finales](https://josu-dev.github.io/Depende-Quiz-Datos/)** > _Quiz para practicar el final de dbd._
 
@@ -43,6 +45,7 @@ Lo que encontrarás dentro de esta carpeta en este repo:
 
 - `/explicacion`: Apuntes generados para el notebook.
 - `/original`: Informacion original para el notebook.
+- `/assets`: Mapa conceptual, archivo original y png.
 
 ---
 
