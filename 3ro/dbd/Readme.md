@@ -28,7 +28,7 @@ Links rápidos a material externo, carpetas en la nube o herramientas específic
 
 - 📓 **[Resumen COMPLETO y practicas resueltas en Notion](https://spectacled-hero-6c5.notion.site/Dise-o-de-Base-de-Datos-35c029fae4e580c69e0ff0b9c229ed21)** > _Cursada y apuntes para los parciales._
 
-- 📺 **[Mapa Conceptual (Parcial)](/assets/mapa-conceptual.png)** > Mapa conceptual hecho en excalidraw, pueden completarlo a su gusto 😀 (no llegue a terminar lo ultimo)
+- 📺 **[Mapa Conceptual (Parcial)](./assets/mapa-conceptual.png)** > Mapa conceptual hecho en excalidraw, pueden completarlo a su gusto 😀 (no llegue a terminar lo ultimo)
 
 - 📺 **[Playlist de YouTube](https://www.youtube.com/watch?v=33zJjdotvaE&list=PLgjP77yaDcE-t44Lfz5bGlSzHf63Od5uF&index=12)** > _Clases grabadas y tutoriales._
 
