@@ -28,13 +28,13 @@ Links rápidos a material externo, carpetas en la nube o herramientas específic
 
 - 📓 **[Resumen COMPLETO y practicas resueltas en Notion](https://spectacled-hero-6c5.notion.site/Dise-o-de-Base-de-Datos-35c029fae4e580c69e0ff0b9c229ed21)** > _Cursada y apuntes para los parciales._
 
-- 📺 **[Mapa Conceptual (Parcial)](./assets/mapa-conceptual.png)** > Mapa conceptual hecho en excalidraw, pueden completarlo a su gusto 😀 (no llegue a terminar lo ultimo)
+- 🗺️ **Mapa Conceptual hecho en Excalidraw**
+  - **[imagen](./assets/mapa-conceptual.png)** > Imagen PNG
+  - **[Archivo editable](./assets/mapa-conceptual.excalidraw)** > para editar en Excalidraw
 
 - 📺 **[Playlist de YouTube](https://www.youtube.com/watch?v=33zJjdotvaE&list=PLgjP77yaDcE-t44Lfz5bGlSzHf63Od5uF&index=12)** > _Clases grabadas y tutoriales._
 
-- 📺 **[Drive de Franja](https://drive.google.com/drive/folders/1QUTqXdp1FDOJV730QIpSKeBxaRPCfNRH)** > Teoria, Finales, Practicas, Parciales
-
-- **[Quiz de Finales](https://josu-dev.github.io/Depende-Quiz-Datos/)** > _Quiz para practicar el final de dbd._
+- ⁉️ **[Quiz de Finales](https://josu-dev.github.io/Depende-Quiz-Datos/)** > _Quiz para practicar el final de dbd._
 
 <div align="center">
     <h2>• Contenido local •</h2>
