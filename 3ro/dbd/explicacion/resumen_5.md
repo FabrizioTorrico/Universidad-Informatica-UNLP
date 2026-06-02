@@ -98,6 +98,4 @@ graph TD
 
 ### 4. Ayudas de Memoria
 
-- **Trampa común:** Creer que si una DF se rompe (sus atributos se separan), _automáticamente_ se perdió. No siempre. A veces se salva por transitividad (como en el ejemplo arriba). El algoritmo es la única forma segura de saberlo.
-
----
+- **Trampa común:** Creer que si una DF se rompe (sus atributos se separan), _automáticamente_ se perdió. No siempre. A veces se salva por transitividad (como en el ejemplo arriba). El algoritmo es la única forma segura de saberlo

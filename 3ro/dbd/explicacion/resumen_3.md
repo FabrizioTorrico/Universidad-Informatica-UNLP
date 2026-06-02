@@ -149,4 +149,4 @@ Listado final de tablas clave generadas:
 ### 4. Ayudas de Memoria (Trampas)
 
 - **Trampa 1:** Olvidar los atributos de la relación. En el diagrama, `km_actual` no pertenece ni al auto ni al servicio solamente, pertenece al **hecho** de realizar el servicio (la relación). Al pasar a tablas, esto va en la tabla intermedia o en la tabla de hechos.
-- **Trampa 2:** Tratar 1:1 como 1:N. En Motores-Vehículos (1:1), la FK puede ir en _cualquiera_ de las dos tablas (o unificarlas), pero lo estándar es ponerla en la que tiene dependencia de existencia total.
+- **Trampa 2:** Tratar 1:1 como 1:N. En Motores-Vehículos (1:1), la FK puede ir en _cualquiera_ de las dos tablas (o unificarlas), pero lo estándar es ponerla en la que tiene dependencia de existencia total

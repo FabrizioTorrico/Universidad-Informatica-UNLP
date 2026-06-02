@@ -85,6 +85,4 @@ graph TD
 > Si te preguntan el color de un campo en Tableau:
 >
 > - **Azul** = Discreto (Cabeceras).
-> - **Verde** = Continuo (Ejes).
-
----
+> - **Verde** = Continuo (Ejes)

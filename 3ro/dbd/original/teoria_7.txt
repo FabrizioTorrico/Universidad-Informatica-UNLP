@@ -9,7 +9,7 @@ Federico Orlando Prof. Adjunto
 
 
 
-Hoy veremos… 
+Hoy veremos 
 1.DBMS 
 2.Tipos de DBMS 3.Claves 
 4.Mysql 

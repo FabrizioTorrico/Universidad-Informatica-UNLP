@@ -1,5 +1,3 @@
-
-
 Alejandra Lliteras Prof. Titular
 Federico Orlando Prof. Adjunto 
 
@@ -11,7 +9,7 @@ De cada vehículo se conoce su patente, marca, modelo, a que cliente pertenece y
 De cada servicio que se le realiza a un vehículo al taller le interesa registrar el motivo por el cual  ingresa, las fechas de ingreso y de egreso, el monto total abonado, que empleado realizó cada una de las  tareas de mantenimiento realizado y en que kilometraje del vehículo se realizó. Un servicio podría incluir  tareas de varios mantenimientos.
 
 
-• Un posible modelo conceptual de ER para el ejercicio sería:
+Un posible modelo conceptual de ER para el ejercicio sería:
 
 ```
 erDiagram

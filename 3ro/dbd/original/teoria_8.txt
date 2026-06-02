@@ -21,8 +21,8 @@ Hoy veremos Datos Abiertos
 9.Marco Normativo 
 10.Dataset 
 11.Wikidata
-Un dato es un elemento  
-descontextualizado que puede  dar origen a la generación de  información. Son símbolos que  describen hechos, condiciones,  valores o situaciones. Un dato  puede ser una letra, un número o  cualquier símbolo que  
+
+Un dato es un elemento descontextualizado que puede  dar origen a la generación de  información. Son símbolos que  describen hechos, condiciones,  valores o situaciones. Un dato  puede ser una letra, un número o  cualquier símbolo que  
 representa una cantidad, una  medida, una palabra o una  descripción. 
 La información es un dato  procesado con valor agregado,  dotado de relevancia, utilidad e  interpretación.
 Un dato público es cualquier dato  generado en el ámbito  

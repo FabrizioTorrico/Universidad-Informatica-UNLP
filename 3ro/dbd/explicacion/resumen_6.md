@@ -80,6 +80,4 @@ El álgebra relacional también define cómo cambiar los datos.
 
 - **Inserción ($R \leftarrow R \cup E$):** Agregar filas nuevas. Unión de la tabla original con las nuevas tuplas.
 - **Eliminación ($R \leftarrow R - E$):** Borrar filas. Resta de la tabla original menos las tuplas a borrar.
-- **Actualización ($\delta$):** Modificar valores. Se denota como una proyección generalizada que calcula nuevos valores.
-
----
+- **Actualización ($\delta$):** Modificar valores. Se denota como una proyección generalizada que calcula nuevos valores

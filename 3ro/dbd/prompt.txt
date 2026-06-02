@@ -26,4 +26,4 @@ Divide la respuesta siguiendo los módulos/capítulos principales del texto orig
 
 ---
 
-**Nota final:** Si notas que la respuesta se cortará por longitud, detente en un punto lógico y escribe "[CONTINUARÁ]" para que yo pueda pedirte la siguiente parte.
+**Nota final:** Si notas que la respuesta se cortará por longitud, detente en un punto lógico y escribe "[CONTINUARÁ]" para que yo pueda pedirte la siguiente parte

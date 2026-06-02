@@ -6,7 +6,7 @@ Alejandra Lliteras Prof. Titular
 Federico Orlando Prof. Adjunto 
 
 TEMAS GENERALES 
-B ases de Datos 1 
+Bases de Datos 1 
 1 2 3 4 5 
 
 Modelo de  Datos 

@@ -196,4 +196,4 @@ graph LR
 
 ### 4. Ayudas de Memoria
 
-- **Tip:** Si ves una flecha donde el lado derecho está _contenido_ en el lado izquierdo, es trivial. Ignórala para el diseño, es ruido.
+- **Tip:** Si ves una flecha donde el lado derecho está _contenido_ en el lado izquierdo, es trivial. Ignórala para el diseño, es ruido

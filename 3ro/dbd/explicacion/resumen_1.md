@@ -251,5 +251,3 @@ El modelo estándar de la industria (SQL). Transforma los diagramas conceptuales
 
 > **⚠️ Trampa Común:**
 > No confundir **Relación** del MER (el rombo, la acción) con **Relación** del Modelo Relacional (la tabla matemática). Son homónimos pero en contextos diferentes significan cosas distintas (aunque relacionadas).
-
----

@@ -90,6 +90,4 @@ Los datos deben estar abiertos **Técnica** y **Legalmente**.
 
 - Base de conocimiento secundaria, libre y colaborativa.
 - Almacena datos estructurados para Wikipedia y otros proyectos.
-- Licencia **CC0 (Dominio Público)**. Cualquiera puede usar los datos sin pedir permiso.
-
----
+- Licencia **CC0 (Dominio Público)**. Cualquiera puede usar los datos sin pedir permiso

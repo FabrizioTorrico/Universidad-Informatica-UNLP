@@ -103,6 +103,4 @@ graph TD
   3.  `GROUP BY` (Agrupa).
   4.  `HAVING` (Filtra grupos).
   5.  `SELECT` (Elige columnas).
-  6.  `ORDER BY` (Ordena al final).
-
----
+  6.  `ORDER BY` (Ordena al final)

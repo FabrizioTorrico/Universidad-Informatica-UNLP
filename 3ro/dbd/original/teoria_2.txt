@@ -3,13 +3,7 @@
 Alejandra Lliteras Prof. Titular
 Federico Orlando Prof. Adjunto 
 
-
-
-
-
-
-Uno de los principales principios en el diseño 
-de bases de datos es la NORMALIZACION 
+Uno de los principales principios en el diseño de bases de datos es la NORMALIZACION 
 Organiza los datos siguiendo reglas 
 Minimiza redundancia 
 Reduce anomalías 

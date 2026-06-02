@@ -126,6 +126,4 @@ Para saber si $X$ es clave candidata:
 Para que una descomposición sea válida (Lossless Join), la intersección de los atributos ($R_1 \cap R_2$) debe ser **CLAVE** en al menos una de las dos tablas ($R_1$ o $R_2$).
 
 > **💡 Regla de Oro:**
-> El atributo por el que cortas la tabla (el nexo) debe ser único (clave) en algún lado. Si cortas por un atributo repetido, al volver a unir, duplicarás datos erróneamente.
-
----
+> El atributo por el que cortas la tabla (el nexo) debe ser único (clave) en algún lado. Si cortas por un atributo repetido, al volver a unir, duplicarás datos erróneamente
